@@ -1,0 +1,1643 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+/* Enable smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --primary-color: #FF6B6B;
+    --background-color: #FFF5EE;
+    --text-color: #333;
+    --white: #fff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Cursor Styles */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
+
+.cursor-follower {
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 107, 107, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.3s ease;
+    opacity: 0.6; /* Adjust visibility of the follower */
+    transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); /* Smooth and interesting animation */
+}
+
+/* Header Styles */
+header {
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    box-shadow: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    transition: top 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Styles */
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Button Styles */
+.button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.apply-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.apply-btn:hover {
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+}
+
+.donate-btn {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    margin-left: 0.2rem;
+}
+
+.donate-btn:hover {
+    background-color: black;
+    color: white;
+    border-color: var(--primary-color);
+    transition: 0.5s;
+}
+
+/* Responsive Adjustments for Portrait Screens */
+@media screen and (max-width: 480px) {
+    .nav-links {
+        display: none; /* Initially hide the links */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Dropdown below the header */
+        left: 0;
+        width: 100%;
+        box-shadow: none; /* Removed shadow due to overlay */
+        padding: 1rem 0;
+        gap: 1rem;
+        z-index: 99;
+    }
+
+    .nav-links a {
+        text-align: left; /* Align text to the left for buttons */
+        font-size: 0.9rem; /* Smaller font size */
+        color: var(--text-color);
+        padding: 0.6rem 1rem; /* Reduced padding to make buttons smaller */
+        border-radius: 25px;
+        font-weight: bold;
+        text-decoration: none;
+        background-color: var(--primary-color); /* Apply same background as apply button */
+        margin-left: 0; /* Align to the left of the screen */
+        width: 100%; /* Make buttons stretch across full width */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    .nav-links a:hover {
+        background-color: black;
+        color: white;
+        transition: 0.5s;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    /* Ensure the Apply and Donate buttons show up when active */
+    .button,
+    .donate-btn {
+        display: block; /* Ensure they are visible when the dropdown is active */
+        width: 100%; /* Stretch across full width for consistency */
+        padding: 0.6rem 1rem; /* Reduced padding */
+        text-align: left; /* Align to the left */
+        background-color: var(--primary-color); /* Consistent background color */
+        border-radius: 25px; /* Same as other buttons */
+        font-weight: bold;
+    }
+
+    .button:hover,
+    .donate-btn:hover {
+        background-color: black;
+        color: white;
+        transition: 0.5s;
+    }
+
+    /* Aligning the links/buttons to the left of the screen */
+    .logo {
+        width: 70px; /* Increased size */
+    }
+
+    /* Overlay background */
+    body.active-dropdown {
+        position: relative;
+    }
+
+    body.active-dropdown::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+        z-index: 98; /* Position the overlay below the dropdown */
+    }
+}
+
+
+
+/* Members Section */
+.members-preview {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+/* Emphasized Title */
+.meet-excos-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem; /* Adjusted margin */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Ensure it's centered */
+}
+
+/* Excos Description */
+.members-preview p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Excos Grid */
+.excos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* More responsive */
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 4rem; /* Added padding to push the button lower */
+}
+
+/* Meet Our Members Button */
+.meet-members-btn {
+    display: inline-block;
+    margin-top: 3rem; /* Increased margin to move the button lower */
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Centers the button horizontally in Flexbox context */
+}
+
+.meet-members-btn:hover {
+    background-color: black;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .excos-grid {
+        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+        padding-bottom: 2rem; /* Adjust padding for smaller screens */
+    }
+    .meet-members-btn {
+        margin-top: 2rem; /* Adjust margin for smaller screens */
+    }
+}
+
+
+
+/* Exco Item */
+.exco-item {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Exco Item */
+.exco-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Exco Image */
+.exco-image {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+/* Exco Info */
+.exco-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.exco-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.exco-position {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Link Styling */
+.exco-link {
+    display: block;
+    text-decoration: none;
+}
+
+
+
+
+
+/* Hero Section */
+.hero {
+    height: 100vh; /* Full viewport height */
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Text Content */
+.hero-content {
+    max-width: 50%;
+    z-index: 2;
+    text-align: left;
+}
+
+.voitheia-title {
+    font-size: 7rem; /* Slightly larger title */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #FF6B6B;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.animated-text {
+    font-size: 4rem; /* Slightly larger subtitle */
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1.5px;
+}
+
+.mission-statement {
+    font-size: 1.8rem; /* Larger body text for readability */
+    color: #555;
+    line-height: 1.6;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #FF6B6B;
+    font-style: italic;
+}
+
+/* Background Image */
+.background-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+/* Scroll Incentive */
+.scroll-incentive {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #FF6B6B;
+    font-size: 1.5rem; /* Larger text */
+    animation: fade-in 2s ease-in-out;
+}
+
+.arrow {
+    width: 28px; /* Larger arrow */
+    height: 28px;
+    border-right: 4px solid #FF6B6B;
+    border-bottom: 4px solid #FF6B6B;
+    transform: rotate(45deg); /* Rotates the arrow to point downwards */
+    animation: bounce 2s infinite; /* Bounce animation for vertical movement */
+}
+
+/* Keyframes for Bounce */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(45deg); /* Maintain rotation while animating position */
+    }
+    40% {
+        transform: translateY(-10px) rotate(45deg); /* Move up */
+    }
+    60% {
+        transform: translateY(-5px) rotate(45deg); /* Bounce slightly back down */
+    }
+}
+
+/* Keyframes for Fade-In */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    /* Adjust for phones */
+    .hero {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2rem 1rem;
+        height: 100vh; /* Still cover the full viewport */
+        align-items: flex-start;
+        padding-top: 4rem; /* Adjust padding to account for header height */
+    }
+
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        transition: top 0.3s, background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .hero-content {
+        max-width: 90%;
+        text-align: left;
+        margin: 0;
+        margin-top: 2rem; /* Additional spacing below the header */
+    }
+
+    .voitheia-title {
+        font-size: 3.5rem; /* Slightly smaller for better readability */
+    }
+
+    .animated-text {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .mission-statement {
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .background-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.4;
+        z-index: -1;
+    }
+}
+
+
+/* Sections */
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Why Choose Voitheia Section */
+.why-choose-section {
+    padding: 5rem 2rem;
+    background: #FF6B6B;  /* Vibrant background color */
+    color: #fff;  /* White text color */
+    max-width: 100%;  /* Ensure the background takes up the whole width */
+    margin: 0;
+    border-radius: 0; /* Remove border-radius to avoid box effect */
+    text-align: center; /* Center all text */
+}
+
+.section-title1 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFF5EE;  /* Ensure the text is visible against the background */
+}
+.section-title2 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FF6B6B;  /* Ensure the text is visible against the background */
+    text-align: center;
+}
+
+.section-content {
+    padding: 0 2rem; /* Some space around the content */
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default for larger screens */
+    gap: 2rem;
+    justify-items: center;
+    align-items: stretch;
+    margin-top: 3rem;
+}
+
+.info-card {
+    background: #fff;
+    color: #333;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #FF6B6B;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .info-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards in a row for tablets */
+    }
+
+    .info-card {
+        padding: 1.5rem; /* Reduce padding */
+        max-width: 250px; /* Reduce card size slightly */
+    }
+
+    .card-title {
+        font-size: 1.3rem; /* Slightly smaller text */
+    }
+
+    .card-text {
+        font-size: 0.9rem; /* Reduce paragraph size */
+    }
+
+    .card-icon {
+        font-size: 2.5rem; /* Smaller icon */
+    }
+
+    .section-title {
+        font-size: 2.4rem; /* Slightly smaller section title */
+    }
+}
+
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards in a row for smaller tablets */
+    }
+
+    .info-card {
+        padding: 1.2rem; /* Further reduce padding */
+        max-width: 220px; /* Further reduce card size */
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.85rem;
+    }
+
+    .card-icon {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+    }
+
+    .info-card {
+        padding: 1rem;
+        max-width: 100%; /* Expand card width to fit container */
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.8rem;
+    }
+
+    .card-icon {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+
+
+/* Our History Section */
+.our-history-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: var(--primary-color); /* Update to use primary color */
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+.history-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; /* Space between history items */
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-direction: row;
+}
+
+.history-item:nth-child(even) {
+    flex-direction: row-reverse; /* Alternate layout */
+}
+
+.history-image {
+    flex: 1;
+    min-width: 250px;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #e0e0e0;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.history-content {
+    flex: 2;
+    text-align: left;
+}
+
+.history-subtitle {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.history-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.history-img {
+    width: 100%; /* Match container width */
+    height: 200px; /* Fixed height, same as placeholders */
+    object-fit: cover; /* Ensures the image covers the area proportionally */
+    border-radius: 10px; /* Same rounded corners as placeholders */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Same shadow effect */
+    display: block; /* Ensures proper alignment inside the container */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .history-item {
+        gap: 1rem; /* Reduce gap between elements */
+    }
+
+    .history-content h3 {
+        font-size: 1.5rem; /* Shrink subtitle */
+    }
+
+    .history-text {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+
+    .image-placeholder {
+        height: 150px; /* Shrink image size */
+    }
+
+    .history-image {
+        height: 150px; /* Shrink image size */
+    }
+}
+
+@media (max-width: 768px) {
+    .history-item {
+        flex-direction: column; /* Stack text and image */
+        text-align: center; /* Center-align content */
+    }
+
+    .history-item:nth-child(even) {
+        flex-direction: column; /* Ensure no reverse layout for even items */
+    }
+
+    .history-content {
+        order: -1; /* Text appears above image */
+        text-align: center;
+    }
+}
+
+/* Counter Section */
+.counter-section {
+    background-color: var(--primary-color); /* Full background with primary color */
+    color: var(--white); /* Set text color to white for contrast */
+    padding: 4rem 2rem; /* Added padding for better spacing */
+    margin: 0; /* Remove any default margin */
+    max-width: 100%; /* Ensure it stretches to the full width */
+    border-radius: 0; /* Remove any border-radius to avoid rounded corners */
+    text-align: center; /* Center the text in the section */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* Counter Title */
+.counter-item p {
+    font-size: 1.2rem; /* Increase font size for better readability */
+    font-weight: 600; /* Make the text semi-bold for emphasis */
+    color: var(--text-color); /* Use a contrasting color for visibility */
+    margin-top: 0.5rem; /* Add a little space above the title */
+    margin-bottom: 0; /* Remove unnecessary bottom margin */
+    letter-spacing: 0.5px; /* Add a bit of spacing between letters */
+    line-height: 1.4; /* Improve readability with a better line height */
+    text-transform: uppercase; /* Use uppercase for a bolder look */
+}
+
+/* Counter Grid */
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px; /* Optional: Limit the width of the grid */
+    margin: 0 auto; /* Center the grid horizontally */
+    text-align: center; /* Center all text inside grid items */
+}
+
+/* Counter Item */
+.counter-item {
+    background: var(--white);
+    color: var(--text-color); /* Text color for items */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.counter-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Counter Number */
+.counter-number {
+    font-size: 2.5rem;
+    color: var(--primary-color); /* Keep primary color for emphasis */
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Buttons */
+.card-donate-btn, .card-apply-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white); /* Ensure button text color is white */
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Learn More Button */
+.card-learn-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white); /* Ensure button text color is white */
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-learn-btn:hover {
+    background-color: var(--text-color); /* Darker text color as hover background */
+    color: var(--white); /* Ensure text remains white and visible */
+    transform: translateY(-3px); /* Slightly lift the button on hover */
+}
+
+.card-learn-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+
+/* Hover Effect for Buttons */
+.card-donate-btn:hover, .card-apply-btn:hover {
+    background-color: var(--text-color); /* Darker text color as hover background */
+    color: var(--white); /* Ensure text remains white and visible */
+    transform: translateY(-3px); /* Slightly lift the button on hover */
+}
+
+/* Focus Effect for Buttons */
+.card-donate-btn:focus, .card-apply-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+
+/* Transparency Section */
+.transparency-section {
+    background-color: var(--light-gray); /* Light gray background */
+    padding: 4rem 2rem; /* Added padding for spacing */
+}
+
+/* Transparency Container */
+.transparency-container {
+    max-width: 1200px; /* Ensure the container is not too wide */
+    margin: 0 auto; /* Center the content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center align the content */
+}
+
+/* Info Content */
+.info-content {
+    width: 100%;
+    max-width: 800px; /* Ensure the content is not too wide */
+    margin-bottom: 2rem; /* Add space between content */
+}
+
+/* Info Title */
+.info-content h2 {
+    font-size: 6vw; /* Use viewport width for responsive font size */
+    font-weight: bold; /* Make the title bold */
+    color: var(--primary-color); /* Primary color for emphasis */
+    margin-bottom: 1.5rem; /* Add spacing below the title */
+    text-transform: uppercase; /* Uppercase for emphasis */
+    letter-spacing: 1.5px; /* Slight letter spacing */
+}
+
+/* Info Paragraph */
+.info-content p {
+    font-size: 1.4rem; /* Larger text for readability */
+    color: var(--text-color); /* Standard text color */
+    line-height: 1.8; /* Improve line spacing for better readability */
+    max-width: 90%; /* Limit the width of text */
+    margin: 0 auto; /* Center align the text */
+    text-align: justify; /* Justify the text like in magazines */
+}
+
+/* Highlight Important Words */
+.info-content p strong {
+    color: var(--primary-color); /* Highlight important words in primary color */
+    font-weight: bold; /* Make them stand out */
+    font-style: italic; /* Italicize important text */
+}
+
+/* Button Container */
+.button-container {
+    margin-top: 2rem; /* Add margin on top for spacing */
+}
+
+/* View Log Button */
+.view-log-button {
+    display: inline-block;
+    background-color: var(--primary-color); /* Button background color */
+    color: #fff; /* Text color in the button */
+    font-size: 1.2rem; /* Slightly larger font size for visibility */
+    padding: 1rem 2.5rem; /* Increased padding for a rounder, larger button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 30px; /* Make the button rounder */
+    text-transform: uppercase; /* Uppercase text for the button */
+    letter-spacing: 1px; /* Letter spacing for the button */
+    transition: 0.3s;
+}
+
+.view-log-button:hover {
+    background-color: black; /* Change to black on hover */
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .transparency-container {
+        padding: 8vw 5vw; /* Adjust padding for smaller screens */
+    }
+    .info-content h2 {
+        font-size: 5vw; /* Slightly smaller title for mid-sized screens */
+    }
+    .info-content p {
+        font-size: 1.5rem; /* Adjust font size */
+    }
+    .button-container {
+        margin-top: 1.5rem; /* Adjust spacing above button */
+    }
+    .view-log-button {
+        font-size: 1rem;
+        padding: 0.8rem 2rem; /* Adjust button size */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .info-content h2 {
+        font-size: 7vw; /* Slightly larger title on small mobile */
+    }
+    .info-content p {
+        font-size: 1.4rem; /* Adjust font size for readability */
+    }
+    .button-container {
+        margin-top: 1rem; /* Reduce spacing above button */
+    }
+    .view-log-button {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.5rem; /* Adjust button size */
+    }
+}
+
+
+
+/* Footer */
+footer {
+    background: var(--text-color);
+    color: var(--white);
+    padding: 3rem 2rem;
+    margin-top: 5rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+
+.social-icons a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .animated-text {
+        font-size: 2.5rem;
+    }
+    
+    .counter-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Blackboard Background Adjustments */
+.blackboard-background {
+    position: relative;
+    width: 90vw; /* Responsive width */
+    height: 80vh; /* Adjust height for rectangular look */
+    background-color: #2b2b2b; /* Dark background */
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    gap: 20px; /* Space between frames */
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    top: 100px; /* Increased top margin for better spacing */
+    margin-bottom: 200px; /* Space for footer */
+}
+
+/* Styling for Polaroid Frames (Rectangular) */
+.photo-frame {
+    position: relative;
+    background: white;
+    border: 10px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    height: 250px; /* Taller frame */
+    width: 200px; /* Slimmer frame */
+}
+
+/* Assigning different rotations to each frame */
+.photo-frame:nth-child(1) {
+    transform: rotate(-5deg);
+}
+
+.photo-frame:nth-child(2) {
+    transform: rotate(3deg);
+}
+
+.photo-frame:nth-child(3) {
+    transform: rotate(-8deg);
+}
+
+.photo-frame:nth-child(4) {
+    transform: rotate(6deg);
+}
+
+.photo-frame:nth-child(5) {
+    transform: rotate(-4deg);
+}
+
+.photo-frame:nth-child(6) {
+    transform: rotate(2deg);
+}
+
+/* Polaroid Image (Square inside frame) */
+.polaroid {
+    width: 100%; /* Full width of the frame */
+    height: 100%; /* Full height of the frame */
+    object-fit: cover; /* Ensures the image is square and covers the space properly */
+}
+
+/* Pin Styling */
+.pin {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Gallery Title Adjustments */
+.gallery-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative; /* Position relative to its normal flow */
+    top: 4rem; /* Shift below the fixed header */
+    
+    /* Responsive adjustments */
+    @media screen and (max-width: 1024px) {
+        font-size: 2.8rem; /* Adjust font size for slightly smaller screens */
+        top: 4.5rem; /* Ensure it stays correctly spaced */
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: 2.5rem; /* Slightly smaller font size for tablets */
+        top: 4.5rem; /* Consistent spacing */
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: 2rem; /* Even smaller font size for phones */
+        top: 4rem; /* Adjust for smaller screens */
+    }
+}
+
+/* Mobile View: Adjusting the Height */
+@media screen and (max-width: 768px) {
+    .blackboard-background {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        grid-template-rows: repeat(3, 1fr); /* 3 rows on mobile */
+        width: 95vw; /* Adjusted width */
+        height: auto; /* Adjust height to fit the content */
+        min-height: 90vh; /* Minimum height for the blackboard */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blackboard-background {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+        grid-template-rows: repeat(6, 1fr); /* 6 rows on small screens */
+        width: 95vw; /* Adjusted width */
+        height: auto; /* Let the height adjust */
+        min-height: 100vh; /* Minimum height for better viewing */
+    }
+}
+/* Subheading for Each Project Section */
+.project-title {
+    font-size: 2rem; /* Small and neat */
+    font-weight: bold;
+    color: black; /* Black for simplicity */
+    text-align: center;
+    letter-spacing: 1px; /* Subtle spacing for readability */
+    text-shadow: none; /* Clean style */
+    position: relative; /* Ensure it flows naturally within the layout */
+    top: 100px;
+}
+
+/* Responsive Adjustments for Subheadings */
+@media screen and (max-width: 768px) {
+    .project-title {
+        font-size: 1rem; /* Slightly smaller font for tablets */
+        margin-bottom: 3px; /* Closer spacing for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project-title {
+        font-size: 0.9rem; /* Smaller font for phones */
+        margin-bottom: 2px; /* Adjust spacing for compact view */
+    }
+}
+
+
+
+
+/* Apply Section with Improved Colors */
+.apply-section {
+    padding: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+
+}
+
+.form-container {
+    width: 80%;
+    max-width: 900px;
+    background: #FFF5EE; /* Lighter peach color */
+    padding: 4vw;
+    border-radius: 20px; /* Rounder corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+/* Form Section */
+.form-section {
+    margin-bottom: 3vw;
+}
+
+.form-section label {
+    font-size: 1.4rem; /* Larger font for better readability */
+    color: #2f4f4f; /* Dark Slate Gray for better contrast */
+    margin-bottom: 1vw;
+}
+
+.form-section input,
+.form-section textarea,
+.form-section select {
+    width: 100%;
+    padding: 1.2vw;
+    margin-top: 0.8vw;
+    margin-bottom: 1.5vw; /* Added more space between elements */
+    border: 1px solid #ccc; /* Softer border color */
+    border-radius: 12px; /* More rounded corners */
+    font-size: 1.1rem; /* Larger input text */
+    background-color: #fffaf0; /* Warm white background */
+    color: #333; /* Darker text for better contrast */
+}
+
+.submit-btn {
+    padding: 1vw 2vw;
+    background-color: var(--primary-color); /* Soft salmon color for the button */
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.3rem; /* Larger font size for visibility */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #ff7d7d; /* Darker salmon color on hover */
+}
+
+/* Responsive Styling for Gradual Size Increase */
+@media (max-width: 768px) {
+    .apply-section {
+        padding: 6vw;
+        min-height: 110vh; /* Increased height for readability */
+    }
+
+    .form-container {
+        width: 90%;
+        padding: 5vw;
+    }
+
+    .form-section label {
+        font-size: 1.6rem; /* Gradually larger font size */
+    }
+
+    .form-section input,
+    .form-section textarea,
+    .form-section select {
+        padding: 1.4vw;
+        font-size: 1.2rem; /* Larger input text */
+        margin-bottom: 2vw; /* Added more space between elements */
+    }
+
+    .submit-btn {
+        font-size: 1.4rem; /* Larger button text */
+    }
+}
+
+@media (max-width: 480px) {
+    .apply-section {
+        padding: 8vw 4vw;
+        min-height: 120vh; /* Further increased height */
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 6vw;
+    }
+
+    .form-section label {
+        font-size: 1.8rem; /* Larger font size for small screens */
+    }
+
+    .form-section input,
+    .form-section textarea,
+    .form-section select {
+        padding: 1.6vw;
+        font-size: 1.4rem; /* Larger input text for readability */
+        margin-bottom: 2.5vw; /* More space for better readability */
+    }
+
+    .submit-btn {
+        font-size: 1.5rem; /* Larger button text */
+    }
+}
+/* WHY DONATE Section */
+.why-donate {
+    min-height: 100vh; /* Adjust height to accommodate content */
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    align-items: center;
+    justify-content: space-between;
+    padding: 5vw;
+    position: relative;
+    color: #333; /* Darker text for contrast */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+/* Content Styling */
+.why-donate-content {
+    max-width: 50%; /* Keeps content compact */
+    z-index: 2; /* Ensures content is above background */
+    text-align: left;
+}
+
+.donate-title {
+    font-size: 4rem; /* Large and bold title */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #FF6B6B; /* Matches the color scheme */
+    text-transform: uppercase;
+}
+
+.donate-subtitle {
+    font-size: 2.5rem; /* Subtitle */
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.donate-text {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #2f4f4f;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    color: #FF6B6B; /* Matches title color */
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Button Styling */
+.contact-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2rem; /* Space between content and button */
+}
+
+.learn-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-button {
+    padding: 0.8rem 2rem;
+    background-color: #FF6B6B;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 30px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underline for links */
+}
+
+.contact-button:hover {
+    background-color: #E63946; /* Slightly darker on hover */
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .why-donate {
+        flex-direction: column;
+        text-align: center;
+        padding: 8vw 5vw; /* Adjusted padding for smaller screens */
+        margin-top: 5rem; /* Push content below the header */
+    }
+    .why-donate-content {
+        max-width: 90%; /* Add margin on left and right for boxed look */
+        margin: 0 auto 0.8rem; /* Center content and reduce bottom space */
+        padding: 1.5rem; /* Add padding inside the "box" */
+        border-radius: 8px; /* Optional: Add rounded corners */
+    }
+    .contact-button-wrapper {
+        margin-left: 0; /* Center the button */
+        margin-top: 0.5rem; /* Further reduce distance from text */
+    }
+    .donate-title {
+        font-size: 3.5rem; /* Slightly smaller title */
+    }
+    .donate-subtitle {
+        font-size: 2rem;
+    }
+    .donate-text {
+        font-size: 1.6rem; /* Adjusted font size */
+    }
+    .contact-button {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .why-donate {
+        padding: 8vw 5vw; /* Match padding to center content */
+        margin-top: rem; /* Push content below the header */
+    }
+    .why-donate-content {
+        max-width: 95%; /* Add margin on left and right for boxed look */
+        margin: 0 auto 0.6rem; /* Center content and reduce bottom space */
+        text-align: center; /* Center the content */
+        padding: 1.5rem; /* Add padding inside the "box" */
+        border-radius: 8px; /* Optional: Add rounded corners */
+    }
+    .donate-title {
+        font-size: 7vw; /* Match title scaling for portrait mode */
+    }
+    .donate-subtitle {
+        font-size: 1.5rem; /* Adjust subtitle size for smaller screens */
+    }
+    .donate-text {
+        font-size: 1.4rem; /* Increase readability */
+    }
+    .contact-button-wrapper {
+        margin-top: 0.4rem; /* Further reduce distance from the text */
+    }
+    .contact-button {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.5rem; /* Adjust button size */
+    }
+}
+
+/* Problem Statement Section */
+.problem-statement-section {
+    padding: 5rem 2rem;
+    background: #FFF5EE;
+    color: #ff7d7d;
+    text-align: left;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.problem-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.text-content {
+    flex: 1 1 60%;
+    font-size: 1.5rem;
+    line-height: 2;
+    color: black;
+    font-weight: 400;
+}
+
+.problem-text {
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: #ff7d7d;
+    font-weight: bold;
+}
+
+.image-placeholder-unique {
+    flex: 1 1 35%;
+    height: 250px;
+    background-color: #e0e0e0;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+
+/* Small horizontal screens (small width but landscape mode) */
+@media (max-width: 600px) {
+    .text-content {
+        font-size: 1.6rem; /* Slightly larger font */
+    }
+
+    .problem-container {
+        gap: 1rem; /* Tighter spacing between image and text */
+    }
+}
+
+/* Portrait mode (phones or narrow screens) */
+@media (max-width: 768px) and (orientation: portrait) {
+    .problem-container {
+        flex-direction: column; /* Stack text above the image */
+        align-items: center; /* Center-align content */
+        text-align: center;
+    }
+
+    .text-content {
+        flex: 1 1 auto;
+        font-size: 1.4rem; /* Slightly larger font for readability */
+    }
+
+    .image-placeholder-unique {
+        flex: 1 1 auto;
+        height: 150px; /* Smaller image for portrait mode */
+    }
+}
+
+
+/* What We Stand For Section */
+.what-we-stand-for-section-unique {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    color: #333; /* Default text color */
+}
+
+.stand-for-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #000; /* Black text for contrast */
+}
+
+.stand-for-content {
+    padding: 0 1rem;
+}
+
+.stand-for-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333; /* Black text for readability */
+    margin-bottom: 1.5rem;
+}
+
+.highlight-stand-for {
+    color: #FF6B6B; /* Pinkish color for emphasis */
+    font-weight: bold;
+}
+
+/* Responsive Adjustments for What We Stand For */
+@media (max-width: 768px) {
+    .stand-for-title {
+        font-size: 2.4rem;
+    }
+
+    .stand-for-text {
+        font-size: 1rem;
+    }
+}
+
+
