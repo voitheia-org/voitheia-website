@@ -237,6 +237,7 @@ nav {
     text-align: center; /* Ensure it's centered */
 }
 
+
 /* Excos Description */
 .members-preview p {
     font-size: 1.1rem;
@@ -247,7 +248,7 @@ nav {
     margin-right: auto;
     line-height: 1.6;
     font-weight: 400;
-    text-align: center;
+
 }
 
 /* Excos Grid */
@@ -268,7 +269,7 @@ nav {
     padding: 0.75rem 1.5rem;
     background-color: var(--primary-color);
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
     border-radius: 30px;
     text-decoration: none;
@@ -384,6 +385,9 @@ nav {
     color: #555;
     line-height: 1.6;
 }
+
+
+
 
 .highlight {
     font-weight: bold;
@@ -540,7 +544,7 @@ section {
     font-weight: bold;
     text-transform: uppercase;
     color: #FF6B6B;  /* Ensure the text is visible against the background */
-    text-align: center;
+    text-align: justify;
 }
 
 .section-content {
@@ -593,6 +597,7 @@ section {
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
+    text-align: justify;
 }
 
 /* Responsive Adjustments */
@@ -748,6 +753,7 @@ section {
     font-size: 1.1rem;
     color: #555;
     line-height: 1.8;
+    text-align: justify;
 }
 
 .history-img {
@@ -974,6 +980,7 @@ section {
     text-transform: uppercase; /* Uppercase text for the button */
     letter-spacing: 1px; /* Letter spacing for the button */
     transition: 0.3s;
+    font-weight: bold;
 }
 
 .view-log-button:hover {
@@ -1248,6 +1255,9 @@ footer {
 }
 
 
+.hidden-text {
+    display: none;
+  }
 
 
 /* Apply Section with Improved Colors */
@@ -1518,7 +1528,7 @@ footer {
     padding: 5rem 2rem;
     background: #FFF5EE;
     color: #ff7d7d;
-    text-align: left;
+    text-align: justify;
     max-width: 100%;
     margin: 0 auto;
     display: flex;
@@ -1539,10 +1549,12 @@ footer {
     line-height: 2;
     color: black;
     font-weight: 400;
+    text-align: justify;
 }
 
 .problem-text {
     margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
 .highlight {
@@ -1615,6 +1627,7 @@ footer {
 
 .stand-for-content {
     padding: 0 1rem;
+    text-align: justify;
 }
 
 .stand-for-text {
@@ -1622,6 +1635,7 @@ footer {
     line-height: 1.8;
     color: #333; /* Black text for readability */
     margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
 .highlight-stand-for {
@@ -1641,3 +1655,89 @@ footer {
 }
 
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    animation: expand 0.5s ease-out;
+}
+
+.polaroid-frame {
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    background: #f9f9f9;
+    border: 5px solid #ccc;
+    position: relative;
+}
+
+.slideshow {
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+.description {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #000;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@keyframes expand {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
