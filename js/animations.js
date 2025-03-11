@@ -29,37 +29,39 @@ window.addEventListener('scroll', () => {
 gsap.registerPlugin(ScrollTrigger);
 
 // Animate the section title
-gsap.from(".section-title", {
-  scrollTrigger: {
-    trigger: ".why-choose-section",
-    start: "top 80%", // Start animation when the top of the section is 80% from the top of the viewport
-    toggleActions: "play none none reverse", // Play animation on scroll, reverse when scrolling back up
-  },
-  y: 50, // Move from 50px below
-  opacity: 0, // Start with 0 opacity
-  duration: 1, // Animation duration in seconds
-  ease: "power2.out", // Easing function for a smooth effect
-});
+// Adjust trigger points dynamically based on screen size
+let startTrigger = window.innerWidth <= 768 ? "top 80%" : "top 95%";  // Starts even earlier on laptops (was 70%)
+let endTrigger = window.innerWidth <= 768 ? "top 50%" : "top 10%";   // Endpoint remains the same
 
-// Animate the info cards with fromTo
 gsap.fromTo(".info-card", 
-  {
-    y: 50, // Starting position
-    opacity: 0 // Starting opacity
-  },
-  {
-    scrollTrigger: {
-      trigger: ".why-choose-section",
-      start: "top 80%",
-      toggleActions: "play none none reverse"
+    { 
+        opacity: 0, 
+        scale: 0.85, 
+        y: 30 
     },
-    y: 0, // End position
-    opacity: 1, // End opacity
-    duration: 1, // Duration of the animation
-    ease: "power2.out", // Easing function for a smooth effect
-    stagger: 0.2 // Delay between animations for each card
-  }
+    {
+        scrollTrigger: {
+            trigger: ".info-grid",
+            start: startTrigger,  
+            end: endTrigger,      
+            scrub: true,
+        },
+        opacity: 1,
+        scale: 1, 
+        y: 0, 
+        duration: 2.5, // Slightly extended duration for smoother effect
+        ease: "power2.out",
+        stagger: window.innerWidth <= 768 ? 0.3 : 0.25, 
+    }
 );
+
+
+
+
+
+
+
+  
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -344,19 +346,6 @@ document.addEventListener("DOMContentLoaded", () => {
     logo.addEventListener("click", toggleDropdown);
 });
 
-// Transparency Section Animation
-gsap.from(".transparency-container", {
-    opacity: 0,
-    scale: 0.8,
-    duration: 1.5,
-    ease: "elastic.out(1, 0.5)",
-    scrollTrigger: {
-        trigger: ".transparency-section",
-        start: "top 80%",
-        toggleActions: "play none none reverse",
-    },
-});
-
 // Info Content Fade-in and Text Animation
 gsap.from(".info-content h2", {
     opacity: 0,
@@ -380,6 +369,55 @@ gsap.from(".info-content p", {
     },
 });
 
+// Problem Statement Section Animation
+gsap.from(".section-title2", {
+    opacity: 0,
+    x: -50,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".section-title2",
+        start: "top 90%",
+    },
+});
+
+gsap.from(".problem-text", {
+    opacity: 0,
+    x: 50,
+    duration: 1,
+    stagger: 0.2, // Applies delay between multiple elements
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".problem-text",
+        start: "top 90%",
+    },
+});
+
+
+// Info Content Fade-in and Text Animation
+gsap.from(".section-title2 h2", {
+    opacity: 0,
+    x: -50,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".section-title2 h2",
+        start: "top 90%",
+    },
+});
+gsap.from(".problem-text p", {
+    opacity: 0,
+    x: 50,
+    duration: 1,
+    delay: 0.2,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".problem-text p",
+        start: "top 90%",
+    },
+});
+
+
 // Button Bounce Animation
 gsap.from(".view-log-button", {
     opacity: 0,
@@ -391,6 +429,19 @@ gsap.from(".view-log-button", {
         start: "top 90%",
     },
 });
+
+// Button Bounce Animation for "Meet Our Members"
+gsap.from(".meet-members-btn", {
+    opacity: 0,
+    y: 20,
+    duration: 1,
+    ease: "bounce.out",
+    scrollTrigger: {
+        trigger: ".meet-members-btn",
+        start: "top 90%",
+    },
+});
+
 
 // Accounts PDF Section Animation
 gsap.from("#accounts-pdf-section h2", {
@@ -439,18 +490,7 @@ gsap.from(".donate-title", {
     },
 });
 
-// Highlighted Text Animation
-gsap.from(".donate-text .highlight", {
-    opacity: 0,
-    y: 20,
-    duration: 1,
-    stagger: 0.3,
-    ease: "power3.out",
-    scrollTrigger: {
-        trigger: ".donate-text",
-        start: "top 90%",
-    },
-});
+
 
 // Contact Button Animation
 gsap.from(".contact-button-wrapper", {
@@ -475,6 +515,57 @@ gsap.from(".contact-button", {
     },
 });
 
+//generation of polaroid pins
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("photoModal");
+    const slideImage = document.getElementById("slideImage");
+    const projectDescription = document.getElementById("projectDescription");
+    const closeBtn = document.querySelector(".close");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
 
+    const projectData = [
+        {
+            images: ["img1.jpg", "img2.jpg", "img3.jpg"],
+            description: "Description for Project 1",
+        },
+        {
+            images: ["img4.jpg", "img5.jpg", "img6.jpg"],
+            description: "Description for Project 2",
+        },
+    ];
 
+    let currentProject = 0;
+    let currentSlide = 0;
 
+    document.querySelectorAll(".photo-frame").forEach((frame, index) => {
+        frame.addEventListener("click", () => {
+            currentProject = index;
+            currentSlide = 0;
+            updateModal();
+            modal.style.display = "flex";
+        });
+    });
+
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    prevBtn.addEventListener("click", () => {
+        currentSlide =
+            (currentSlide - 1 + projectData[currentProject].images.length) %
+            projectData[currentProject].images.length;
+        updateModal();
+    });
+
+    nextBtn.addEventListener("click", () => {
+        currentSlide =
+            (currentSlide + 1) % projectData[currentProject].images.length;
+        updateModal();
+    });
+
+    function updateModal() {
+        slideImage.src = projectData[currentProject].images[currentSlide];
+        projectDescription.textContent = projectData[currentProject].description;
+    }
+});
