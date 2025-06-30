@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Voitheia</title>
+    <link rel="icon" type="image/png" href="photos/Voitheia_logo.webp">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Cursor elements -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="photos/Voitheia_logo.webp" alt="Voitheia Logo" class="logo">
+            </a>
+            <div class="nav-links">
+                <a href="crew.html">The Crew</a>
+                <a href="bulletin.html">Bulletin</a>
+                <a href="accounts.html">Accounts</a>
+                <a href="projects.html">Projects</a>
+                <a href="apply.html" class="button apply-btn">Apply</a>
+                <a href="donate.html" class="button donate-btn">Donate</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="projects-container">
+            <div class="projects-header">
+                <h1>OUR PROJECTS</h1>
+                <!--<p>Discover the impactful initiatives we've undertaken to make a difference in communities across Nigeria. Each project represents our commitment to positive change.</p>-->
+            </div>
+
+            <!-- Timeline Line -->
+            <div class="timeline-line"></div>
+
+            <!-- Timeline Container -->
+            <div class="timeline-container">
+                <!-- Project 1 -->
+                <div class="project-card" data-project="1">
+                    <div class="timeline-dot"></div>
+                    <div class="project-image">
+                        <!-- CHANGE PROJECT 1 MAIN PHOTO HERE: Replace 'photos/project1-main.jpg' -->
+                        Project Photo Placeholder
+                    </div>
+                    <h3 class="project-title">Community Health Initiative</h3>
+                    <p class="project-description" align = justify>
+                        A comprehensive healthcare program providing free medical checkups, health education, and essential medicines to underserved communities.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Lagos, Nigeria</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-project="2">
+                    <div class="timeline-dot"></div>
+                    <div class="project-image">
+                        <!-- CHANGE PROJECT 2 MAIN PHOTO HERE: Replace 'photos/project2-main.jpg' -->
+                        Project Photo Placeholder
+                    </div>
+                    <h3 class="project-title">Education Support Program</h3>
+                    <p class="project-description">
+                        Supporting young minds through scholarships, school supplies, and educational infrastructure development in rural communities.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Abuja, Nigeria</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Project Modals -->
+    <!-- Modal 1 -->
+    <div class="project-modal" id="modal-1">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-btn">&times;</button>
+                <h2 class="modal-title">Community Health Initiative</h2>
+                <div class="modal-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Lagos, Nigeria</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <!-- CHANGE PROJECT 1 GALLERY PHOTOS HERE -->
+                    <div class="modal-image" style="background-image: url('photos/project1-gallery1.jpg');">Gallery Photo 1</div>
+                    <div class="modal-image" style="background-image: url('photos/project1-gallery2.jpg');">Gallery Photo 2</div>
+                    <div class="modal-image" style="background-image: url('photos/project1-gallery3.jpg');">Gallery Photo 3</div>
+                </div>
+                <div class="modal-description" align = justify>
+                    <p>Our Community Health Initiative has been transforming lives in Lagos by providing accessible healthcare services to those who need them most. This comprehensive program includes free medical consultations, health screenings, vaccination drives, and health education workshops.</p>
+                    <br>
+                    <p>Since its launch, we have served over 2,000 individuals, conducted 150 health screenings, and provided essential medicines to hundreds of families. Our mobile health clinics reach remote areas where healthcare access is limited.</p>
+                    <br>
+                    <p>The program also focuses on preventive care, educating communities about hygiene, nutrition, and disease prevention. We work closely with local healthcare providers to ensure sustainable impact.</p>
+                </div>
+                <div class="contact-section">
+                    <h3>Support This Project</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>health@voitheia.org</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 805 589 9033</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Monthly Budget: ₦500,000</span>
+                        </div>
+                    </div>
+                    <button class="donate-button">Donate to This Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="project-modal" id="modal-2">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-btn">&times;</button>
+                <h2 class="modal-title">Education Support Program</h2>
+                <div class="modal-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Abuja, Nigeria</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <!-- CHANGE PROJECT 2 GALLERY PHOTOS HERE -->
+                    <div class="modal-image" style="background-image: url('photos/project2-gallery1.jpg');">Gallery Photo 1</div>
+                    <div class="modal-image" style="background-image: url('photos/project2-gallery2.jpg');">Gallery Photo 2</div>
+                    <div class="modal-image" style="background-image: url('photos/project2-gallery3.jpg');">Gallery Photo 3</div>
+                </div>
+                <div class="modal-description">
+                    <p>Education is the foundation of progress, and our Education Support Program is dedicated to ensuring that every child has access to quality learning opportunities. We provide scholarships, school supplies, and infrastructure support to schools in underserved areas.</p>
+                    <p>Our program has awarded 50 scholarships, supplied educational materials to 20 schools, and built 5 new classrooms. We also conduct teacher training workshops to enhance the quality of education.</p>
+                    <p>Through partnerships with local schools and educational institutions, we create sustainable learning environments that foster growth and development.</p>
+                </div>
+                <div class="contact-section">
+                    <h3>Support This Project</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>education@voitheia.org</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 805 589 9033</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Monthly Budget: ₦750,000</span>
+                        </div>
+                    </div>
+                    <button class="donate-button">Donate to This Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="crew.html">The Crew</a>
+                <a href="bulletin.html">Bulletin</a>
+                <a href="accounts.html">Accounts</a>
+                <a href="apply.html">Apply</a>
+                <a href="donate.html">Donate</a>
+            </div>
+            <div class="footer-links">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <!--<a href="#"><i class="fab fa-youtube"></i></a>-->
+                    <a href="https://www.linkedin.com/company/voitheia-org/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/voitheia.ng?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Contact</h3>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=voitheia.org@gmail.com&su=Hey Voitheia&body=Hi, I would like to know more about your organisation."
+                target="_blank"><i class="fas fa-envelope"></i> voitheia.org@gmail.com</a>
+                <a href="tel:+2348055899033"><i class="fas fa-phone"></i> +234 805 589 9033</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cursor.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        // Timeline animation and modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Timeline animation on scroll
+            const timelineDots = document.querySelectorAll('.timeline-dot');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            const observerOptions = {
+                threshold: 0.3,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const card = entry.target;
+                        const dot = card.querySelector('.timeline-dot');
+                        
+                        card.classList.add('visible');
+                        if (dot) {
+                            dot.classList.add('visible');
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            projectCards.forEach(card => {
+                observer.observe(card);
+            });
+
+            // Modal functionality
+            const projectCards_modal = document.querySelectorAll('.project-card');
+            const modals = document.querySelectorAll('.project-modal');
+            const closeBtns = document.querySelectorAll('.close-btn');
+
+            projectCards_modal.forEach(card => {
+                card.addEventListener('click', () => {
+                    const projectId = card.getAttribute('data-project');
+                    const modal = document.getElementById(`modal-${projectId}`);
+                    if (modal) {
+                        modal.style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const modal = btn.closest('.project-modal');
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            modals.forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+
+            // Donate button functionality
+            const donateButtons = document.querySelectorAll('.donate-button');
+            donateButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Redirect to donate page or handle donation
+                    window.location.href = 'donate.html';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
