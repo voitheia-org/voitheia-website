@@ -39,7 +39,8 @@ if (isMousePointerAvailable()) {
         });
     });
 
-    document.querySelectorAll('a, button').forEach(el => {
+    // FIXED: Added .project-card to the selector
+    document.querySelectorAll('a, button, .project-card').forEach(el => {
         el.addEventListener('mouseenter', () => {
             gsap.to([cursor, follower], {
                 scale: 1.5,
