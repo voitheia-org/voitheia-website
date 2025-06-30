@@ -19,7 +19,7 @@
     <header>
         <nav>
             <a href="index.html">
-                <img src="photos/Voitheia_logo.webp" alt="Voitheia Logo" class="logo">
+                <img src="photos/Voitheia_logo.png" alt="Voitheia Logo" class="logo">
             </a>
             <div class="nav-links">
                 <a href="crew.html">The Crew</a>
@@ -48,34 +48,27 @@
                 <!-- Project 1 -->
                 <div class="project-card" data-project="1">
                     <div class="timeline-dot"></div>
-                    <div class="project-image">
-                        <!-- CHANGE PROJECT 1 MAIN PHOTO HERE: Replace 'photos/project1-main.jpg' -->
-                        Project Photo Placeholder
+                    <div class="project-image" style="background-image: url('/Users/kalyan/Desktop/VOITHEIA/photos/ourwork1.jpeg');">
+                        <!-- Individual image per project -->
                     </div>
-                    <h3 class="project-title">Community Health Initiative</h3>
-                    <p class="project-description" align = justify>
-                        A comprehensive healthcare program providing free medical checkups, health education, and essential medicines to underserved communities.
-                    </p>
+                    <h3 class="project-title">Heritage Homes</h3>
                     <div class="project-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Lagos, Nigeria</span>
+                        <i class="fas fa-circle-info"></i>
+                        <span>Click for more info</span>
                     </div>
                 </div>
+            
 
                 <!-- Project 2 -->
                 <div class="project-card" data-project="2">
                     <div class="timeline-dot"></div>
-                    <div class="project-image">
-                        <!-- CHANGE PROJECT 2 MAIN PHOTO HERE: Replace 'photos/project2-main.jpg' -->
-                        Project Photo Placeholder
+                    <div class="project-image" style="background-image: url('/Users/kalyan/Desktop/VOITHEIA/photos/challenge.webp');">
+                        <!-- Individual image per project -->
                     </div>
-                    <h3 class="project-title">Education Support Program</h3>
-                    <p class="project-description">
-                        Supporting young minds through scholarships, school supplies, and educational infrastructure development in rural communities.
-                    </p>
+                    <h3 class="project-title">Community Health Initiative</h3>
                     <div class="project-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Abuja, Nigeria</span>
+                        <i class="fas fa-circle-info"></i>
+                        <span>Click for more info</span>
                     </div>
                 </div>
             </div>
@@ -88,43 +81,48 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button class="close-btn">&times;</button>
-                <h2 class="modal-title">Community Health Initiative</h2>
+                <h2 class="modal-title">Heritage Homes</h2>
                 <div class="modal-location">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>Lagos, Nigeria</span>
+                    <a href="https://maps.app.goo.gl/xAhxgXCbXUM9wysb7" target="_blank" rel="noopener noreferrer">
+                        45 Faramobi Ajike St, Anthony, Lagos 105102, Lagos, Nigeria
+                    </a>
                 </div>
             </div>
             <div class="modal-body">
-                <div class="modal-gallery">
-                    <!-- CHANGE PROJECT 1 GALLERY PHOTOS HERE -->
-                    <div class="modal-image" style="background-image: url('photos/project1-gallery1.jpg');">Gallery Photo 1</div>
-                    <div class="modal-image" style="background-image: url('photos/project1-gallery2.jpg');">Gallery Photo 2</div>
-                    <div class="modal-image" style="background-image: url('photos/project1-gallery3.jpg');">Gallery Photo 3</div>
-                </div>
-                <div class="modal-description" align = justify>
-                    <p>Our Community Health Initiative has been transforming lives in Lagos by providing accessible healthcare services to those who need them most. This comprehensive program includes free medical consultations, health screenings, vaccination drives, and health education workshops.</p>
-                    <br>
-                    <p>Since its launch, we have served over 2,000 individuals, conducted 150 health screenings, and provided essential medicines to hundreds of families. Our mobile health clinics reach remote areas where healthcare access is limited.</p>
-                    <br>
-                    <p>The program also focuses on preventive care, educating communities about hygiene, nutrition, and disease prevention. We work closely with local healthcare providers to ensure sustainable impact.</p>
-                </div>
-                <div class="contact-section">
-                    <h3>Support This Project</h3>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>health@voitheia.org</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+234 805 589 9033</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-dollar-sign"></i>
-                            <span>Monthly Budget: ₦500,000</span>
-                        </div>
+                <div class="modal-gallery-wrapper">
+                    <button class="modal-slider-btn prev">&#10094;</button>
+                    <div class="modal-gallery-scroll">
+                        <div class="modal-image" style="background-image: url('photos/p21.webp');"></div>
+                        <div class="modal-image" style="background-image: url('photos/v2.webp');"></div>
+                        <div class="modal-image" style="background-image: url('photos/v3.webp');"></div>
+                        <div class="modal-image" style="background-image: url('photos/v4.webp');"></div>
+                        <div class="modal-image" style="background-image: url('photos/v5.webp');"></div>
+                        <div class="modal-image" style="background-image: url('photos/v5.webp');"></div>
+                        <!-- Add more as needed -->
                     </div>
-                    <button class="donate-button">Donate to This Project</button>
+                    <button class="modal-slider-btn next">&#10095;</button>
+                </div>
+                <div class="modal-description">
+                    <p>Heritage Homes is our flagship initiative aimed at providing shelter, safety, and education to orphaned and vulnerable children. Located in Lagos, Nigeria, it serves as a nurturing environment where children grow with dignity, care, and opportunity.</p>
+                    <p>We provide essentials like food, clothing, and medical care, along with access to formal education and personal mentorship. The home also offers emotional and psychological support, ensuring holistic development.</p>
+                </div>                
+                <div class="contact-section">
+                    <h3>Support This Project & more</h3>
+                    <div class="footer-links1">
+                        <div>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=voitheia.org@gmail.com&su=Hey Voitheia&body=Hi, I would like to know more about your organisation."
+                            target="_blank"><i class="fas fa-envelope"></i> voitheia.org@gmail.com</a>
+                        </div>
+                        <div>
+                            <a href="tel:+2348055899033"><i class="fas fa-phone"></i> +234 805 589 9033</a>
+                        </div>
+                        <!--<div class="contact-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Monthly Budget: ₦750,000</span>
+                        </div>-->
+                    </div>
+                    <button class="donate-button">Donate</button>
                 </div>
             </div>
         </div>
@@ -142,16 +140,17 @@
                 </div>
             </div>
             <div class="modal-body">
-                <div class="modal-gallery">
-                    <!-- CHANGE PROJECT 2 GALLERY PHOTOS HERE -->
-                    <div class="modal-image" style="background-image: url('photos/project2-gallery1.jpg');">Gallery Photo 1</div>
-                    <div class="modal-image" style="background-image: url('photos/project2-gallery2.jpg');">Gallery Photo 2</div>
-                    <div class="modal-image" style="background-image: url('photos/project2-gallery3.jpg');">Gallery Photo 3</div>
-                </div>
-                <div class="modal-description">
-                    <p>Education is the foundation of progress, and our Education Support Program is dedicated to ensuring that every child has access to quality learning opportunities. We provide scholarships, school supplies, and infrastructure support to schools in underserved areas.</p>
-                    <p>Our program has awarded 50 scholarships, supplied educational materials to 20 schools, and built 5 new classrooms. We also conduct teacher training workshops to enhance the quality of education.</p>
-                    <p>Through partnerships with local schools and educational institutions, we create sustainable learning environments that foster growth and development.</p>
+                <div class="modal-gallery-wrapper">
+                    <button class="modal-slider-btn prev">&#10094;</button>
+                    <div class="modal-gallery-scroll">
+                        <div class="modal-image" style="background-image: url('photos/project1-gallery1.jpg');">Gallery Photo 1</div>
+                        <div class="modal-image" style="background-image: url('photos/project1-gallery2.jpg');">Gallery Photo 2</div>
+                        <div class="modal-image" style="background-image: url('photos/project1-gallery3.jpg');">Gallery Photo 3</div>
+                        <div class="modal-image" style="background-image: url('photos/project1-gallery3.jpg');">Gallery Photo 3</div>
+                        <div class="modal-image" style="background-image: url('photos/project1-gallery3.jpg');">Gallery Photo 3</div>
+                        <!-- Add more as needed -->
+                    </div>
+                    <button class="modal-slider-btn next">&#10095;</button>
                 </div>
                 <div class="contact-section">
                     <h3>Support This Project</h3>
@@ -175,7 +174,6 @@
         </div>
     </div>
 
- 
     
     <!-- Footer -->
     <footer>
@@ -279,6 +277,37 @@
                 });
             });
         });
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryWrappers = document.querySelectorAll('.modal-gallery-wrapper');
+
+            galleryWrappers.forEach(wrapper => {
+                const scrollContainer = wrapper.querySelector('.modal-gallery-scroll');
+                const images = scrollContainer.querySelectorAll('.modal-image');
+                const prevBtn = wrapper.querySelector('.modal-slider-btn.prev');
+                const nextBtn = wrapper.querySelector('.modal-slider-btn.next');
+
+                if (images.length > 3) {
+                    prevBtn.style.display = 'block';
+                    nextBtn.style.display = 'block';
+
+                    prevBtn.addEventListener('click', () => {
+                        scrollContainer.scrollBy({
+                            left: -scrollContainer.offsetWidth * 0.9,
+                            behavior: 'smooth'
+                        });
+                    });
+
+                    nextBtn.addEventListener('click', () => {
+                        scrollContainer.scrollBy({
+                            left: scrollContainer.offsetWidth * 0.9,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+            });
+        });
+
+
     </script>
 </body>
 </html>
