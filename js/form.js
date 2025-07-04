@@ -13,7 +13,13 @@ function sendEmail(event) {
     const position = document.getElementById("position").value;
     const reason = document.getElementById("reason").value;
     const contribution = document.getElementById("contribution").value;
-    const experience = document.getElementById("experience").value;
+    const email = document.getElementById("email").value;
+
+    // Email is compulsory
+    if (!email) {
+        alert("Please enter your Email ID.");
+        return;
+    }
 
     // Prepare email parameters
     const emailParams = {
@@ -24,7 +30,7 @@ function sendEmail(event) {
         position: position,
         reason: reason,
         contribution: contribution,
-        experience: experience
+        email: email
     };
 
     // Send email using EmailJS
