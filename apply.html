@@ -31,63 +31,64 @@
         </nav>
     </header>
 
-    <!-- Application Form Section -->
-    <section class="apply-section">
-        <div class="form-container">
-            <h2>Apply for a Position</h2>
-            <form id="apply-form" onsubmit="sendEmail(event)">
-                <div class="form-section">
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" required>
-                </div>
+<!-- Application Form Section -->
+<section class="apply-section">
+    <div class="form-container">
+        <h2>Apply for a Position</h2>
+        <form id="apply-form" onsubmit="sendEmail(event)">
+            <div class="form-section">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+            </div>
 
-                <div class="form-section">
-                    <label for="age">Age:</label>
-                    <input type="number" id="age" required>
-                </div>
+            <div class="form-section">
+                <label for="age">Age:</label>
+                <input type="number" id="age" required>
+            </div>
 
-                <div class="form-section">
-                    <label for="school">School:</label>
-                    <input type="text" id="school" required>
-                </div>
+            <div class="form-section">
+                <label for="school">School:</label>
+                <input type="text" id="school" required>
+            </div>
 
-                <div class="form-section">
-                    <label for="grade">Grade:</label>
-                    <input type="text" id="grade" required>
-                </div>
+            <div class="form-section">
+                <label for="grade">Grade:</label>
+                <input type="text" id="grade" required>
+            </div>
 
-                <div class="form-section">
-                    <label for="position">Position Applying For:</label>
-                    <select id="position" required>
-                        <option value="">Select Position</option>
-                        <option value="Project Management team member">Project Management team member</option>
-                        <option value="Public Image team member">Public Image team member</option>
-                        <option value="Volunteer Coordinator member">Volunteer Coordinator member</option>
-                        <option value="History and Archives team member">History and Archives team member</option>
-                        <option value="Event Management team member">Event Management team member</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
+            <div class="form-section">
+                <label for="position">Position Applying For:</label>
+                <select id="position" required>
+                    <option value="">Select Position</option>
+                    <option value="Project Management team member">Project Management team member</option>
+                    <option value="Public Image team member">Public Image team member</option>
+                    <option value="Volunteer Coordinator member">Volunteer Coordinator member</option>
+                    <option value="History and Archives team member">History and Archives team member</option>
+                    <option value="Event Management team member">Event Management team member</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
 
-                <div class="form-section">
-                    <label for="reason">How do you think you can fulfill the position you are applying for?</label>
-                    <textarea id="reason" rows="4" required></textarea>
-                </div>
+            <div class="form-section">
+                <label for="reason">How do you think you can fulfill the position you are applying for?</label>
+                <textarea id="reason" rows="4" required></textarea>
+            </div>
 
-                <div class="form-section">
-                    <label for="contribution">What can you bring to Voitheia?</label>
-                    <textarea id="contribution" rows="4" required></textarea>
-                </div>
+            <div class="form-section">
+                <label for="contribution">What can you bring to Voitheia?</label>
+                <textarea id="contribution" rows="4" required></textarea>
+            </div>
 
-                <div class="form-section">
-                    <label for="experience">Do you have any past experience? (Optional)</label>
-                    <textarea id="experience" rows="4"></textarea>
-                </div>
+            <div class="form-section">
+                <label for="email">Email ID<span style="color: red;">*</span>:</label>
+                <input type="email" id="email" required>
+            </div>
 
-                <button type="submit" class="submit-btn">Submit Application</button>
-            </form>
-        </div>
-    </section>
+            <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer>
