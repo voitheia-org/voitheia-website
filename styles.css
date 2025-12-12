@@ -33,7 +33,7 @@ body {
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 99999;
     transition: transform 0.1s ease;
 }
 
@@ -44,7 +44,7 @@ body {
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
-    z-index: 9998;
+    z-index: 99998;
     transition: transform 0.3s ease;
     opacity: 0.6; /* Adjust visibility of the follower */
     transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); /* Smooth and interesting animation */
@@ -52,13 +52,14 @@ body {
 
 /* Header Styles */
 header {
-    background-color: transparent;
+    background-color: var(--background-color);
     padding: 0.5rem 1rem;
-    box-shadow: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 100;
+    left: 0;
+    z-index: 1000;
     transition: top 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
 
@@ -86,6 +87,22 @@ nav {
     display: flex;
     gap: 2rem;
     align-items: center;
+}
+
+.apply-title {
+    margin-bottom: 50px; /*Adjust Accordingly for spacing between the heading and First options */
+}
+
+.quick-links {
+    margin-bottom: 20px;
+}
+
+.connectwus {
+    margin-bottom: 20px;
+}
+
+.contact {
+    margin-bottom: 20px;
 }
 
 .nav-links a {
@@ -2136,3 +2153,18 @@ footer {
     height: 100%;
     object-fit: cover;
 }
+
+.char-counter {
+    display: block;
+    font-size: 12px;
+    color: #888;
+}
+
+.char-counter.invalid {
+    color: #ff4444; /* red when below limit */
+}
+
+.char-counter.valid {
+    color: #2ecc71; /* green when valid */
+}
+
