@@ -287,7 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (isDropdownActive) {
             // If dropdown is active, navigate to index.html
-            window.location.href = "index.html";
+            window.location.href = "/index.html";
         } else {
             // Toggle dropdown menu
             navLinks.classList.add("active"); // Show dropdown
