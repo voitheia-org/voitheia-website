@@ -1,11 +1,10 @@
-// Initialize EmailJS with your public key
-emailjs.init("HP76YS8sX0pe1Xx4m");
+// Initialize EmailJS
+emailjs.init("mOpeuBTiwijCKLKLQ");
 
-// Function to send the email
 function sendEmail(event) {
-    event.preventDefault();  // Prevent default submission
+    event.preventDefault(); 
 
-    // Collect form data
+    // Collect data
     const name = document.getElementById("name").value;
     const age = document.getElementById("age").value;
     const school = document.getElementById("school").value;
@@ -14,37 +13,25 @@ function sendEmail(event) {
     const reason = document.getElementById("reason").value.trim();
     const contribution = document.getElementById("contribution").value.trim();
     const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value.trim();
+    const phoneInput = document.getElementById("phone").value.trim(); 
     const countryCode = document.getElementById("country-code").value;
 
-    // -----------------------------------------
-    // ✅ VALIDATION SECTION
-    // -----------------------------------------
-
-    // Phone number must be 10 digits
-    if (!/^\d{10}$/.test(phone)) {
+    // Validation
+    if (!/^\d{10}$/.test(phoneInput)) {
         alert("Phone number must be exactly 10 digits.");
         return;
     }
 
-    // 200-character minimum validation
-    if (reason.length < 200) {
-        alert("Your explanation for fulfilling the position must be at least 200 characters.");
+    if (reason.length < 200 || contribution.length < 200) {
+        alert("Text areas must be at least 200 characters.");
         return;
     }
 
-    if (contribution.length < 200) {
-        alert("Your answer for what you can bring to Voitheia must be at least 200 characters.");
-        return;
-    }
-
-    // Email is compulsory
     if (!email) {
         alert("Please enter your Email ID.");
         return;
     }
 
-    // Prepare email parameters
     const emailParams = {
         name: name,
         age: age,
@@ -54,28 +41,28 @@ function sendEmail(event) {
         reason: reason,
         contribution: contribution,
         email: email,
-        phone: countryCode + " " + phone
+        phone: countryCode + " " + phoneInput
     };
 
-    // Send email using EmailJS
-    emailjs.send("service_4l2j8uo", "template_moipsap", emailParams)
+    emailjs.send("service_x9oqdei", "template_k5rovvd", emailParams)
         .then(function(response) {
             alert("Your application has been submitted successfully!");
-            console.log("SUCCESS!", response);
-            document.getElementById("apply-form").reset();  // Reset the form
+            document.getElementById("apply-form").reset(); 
         })
         .catch(function(error) {
-            alert("Oops! Something went wrong, please try again.");
+            alert("Oops! Something went wrong.");
             console.error("FAILED...", error);
         });
 }
 
-// Function to constantly update the word counter
+// Function to constantly update the character counter for 200-500 range
 function updateCharCounter(textarea, counter) {
     const minChars = parseInt(textarea.getAttribute("data-minchars"));
+    const maxChars = textarea.getAttribute("maxlength") || 500; 
     const count = textarea.value.length;
 
-    counter.textContent = `${count} / ${minChars} characters`;
+    // Update the text to show the 200-500 range
+    counter.textContent = `${count} / ${minChars}-${maxChars} characters`;
 
     if (count < minChars) {
         counter.classList.add("invalid");
@@ -94,9 +81,9 @@ document.querySelectorAll("textarea[data-minchars]").forEach(textarea => {
         updateCharCounter(textarea, counter);
     });
 
+    // Run once on load to show initial state
     updateCharCounter(textarea, counter);
 });
-
 const phone = document.getElementById("phone");
 form.addEventListener("submit", (event) => {
     if (!/^\d{10}$/.test(phone.value)) {
