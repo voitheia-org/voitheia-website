@@ -1,5 +1,5 @@
 // Initialize EmailJS
-emailjs.init("mOpeuBTiwijCKLKLQ");
+emailjs.init("HP76YS8sX0pe1Xx4m");
 
 function sendEmail(event) {
     event.preventDefault(); 
@@ -44,7 +44,7 @@ function sendEmail(event) {
         phone: countryCode + " " + phoneInput
     };
 
-    emailjs.send("service_x9oqdei", "template_k5rovvd", emailParams)
+    emailjs.send("service_4l2j8uo", "template_e2xrumc", emailParams)
         .then(function(response) {
             alert("Your application has been submitted successfully!");
             document.getElementById("apply-form").reset(); 
