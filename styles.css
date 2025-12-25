@@ -136,8 +136,18 @@ nav {
 }
 
 .apply-btn {
+    /* Default state explicitly defined */
     background-color: var(--primary-color);
     color: var(--white);
+    transform: scale(1);
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+
+    /* Transition is initially disabled to prevent page-load glitches */
+    transition: none;
 }
 
 .apply-btn:hover {
@@ -145,6 +155,7 @@ nav {
     color: white;
     transition: 0.5s;
 }
+
 
 .donate-btn {
     background-color: var(--white);
