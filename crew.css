@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CREW.CSS - FIXED, CLEANED & FADE-IN + HOVER EFFECTS
+   CREW.CSS — OPTIMIZED, SAFE, PERFORMANCE FIXED
    ========================================================================== */
 
 :root {
@@ -10,25 +10,20 @@
   --text-gray: #6b7280;
 }
 
-/* 2. BASE SECTION */
+/* ======================================================================
+   BASE
+   ====================================================================== */
+
+body {
+  cursor: none;
+}
+
 .crew-section {
   min-height: 100vh;
-  padding: 140px 2rem 4rem 2rem; /* Extra top padding to clear the header */
+  padding: 140px 2rem 4rem 2rem;
   background-color: transparent !important;
   position: relative;
   z-index: 1;
-}
-
-/* Fade-in base class */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .page-title {
@@ -40,7 +35,10 @@
   text-transform: uppercase;
 }
 
-/* 3. PARTICLE FIX */
+/* ======================================================================
+   PARTICLES + FOOTER
+   ====================================================================== */
+
 #particles-js {
   position: fixed;
   inset: 0;
@@ -50,14 +48,16 @@
   pointer-events: none;
 }
 
-/* FOOTER FIX */
 footer {
   position: relative;
   z-index: 100 !important;
   background-color: #1a1a1a;
 }
 
-/* --- SEARCH INTERFACE --- */
+/* ======================================================================
+   SEARCH
+   ====================================================================== */
+
 .search-container {
   max-width: 600px;
   margin: 0 auto 1.5rem auto;
@@ -72,17 +72,18 @@ footer {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
   outline: none;
-  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* --- CONTROLS --- */
+/* ======================================================================
+   ACCORDION CONTROLS
+   ====================================================================== */
+
 .accordion-controls {
   max-width: 800px;
   margin: 0 auto 2rem auto;
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
-  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .accordion-controls button {
@@ -93,15 +94,19 @@ footer {
   color: var(--primary-color);
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
 }
 
 .accordion-controls button:hover {
   background: var(--primary-color);
   color: white;
+  transform: translateY(-2px);
 }
 
-/* --- ACCORDION LOGIC --- */
+/* ======================================================================
+   ACCORDION
+   ====================================================================== */
+
 .accordion-container {
   max-width: 900px;
   margin: 0 auto;
@@ -123,10 +128,10 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer !important;
+  cursor: pointer;
   background: var(--primary-color);
   color: var(--white);
-  transition: background 0.3s ease;
+  transition: filter 0.3s ease;
 }
 
 .accordion-header:hover {
@@ -151,7 +156,10 @@ footer {
   overflow: hidden;
 }
 
-/* --- CREW GRID --- */
+/* ======================================================================
+   CREW GRID
+   ====================================================================== */
+
 .crew-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -159,27 +167,38 @@ footer {
   padding: 2rem;
 }
 
+/* ======================================================================
+   CREW CARD — FADE + HOVER (FIXED)
+   ====================================================================== */
+
 .crew-card {
   background: #f8fafc;
   border-radius: 1rem;
   padding: 1rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
-  opacity: 0; /* start invisible for fade-in */
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .crew-card.visible {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .crew-card:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 18px 30px rgba(255, 107, 107, 0.25);
 }
 
 .crew-card img {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 0.75rem;
   margin-bottom: 1rem;
@@ -198,7 +217,17 @@ footer {
   font-size: 0.9rem;
 }
 
-/* --- UTILITIES --- */
-.cursor, .cursor-follower {
+/* ======================================================================
+   UTILITIES
+   ====================================================================== */
+
+.highlight {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-style: italic;
+}
+
+.cursor,
+.cursor-follower {
   pointer-events: none !important;
 }
