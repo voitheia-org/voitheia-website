@@ -12,10 +12,15 @@ html {
 
 
 :root {
-    --primary-color: #FF6B6B;
-    --background-color: #FFF5EE;
-    --text-color: #333;
-    --white: #fff;
+  --primary-color: #FF6B6B;
+  --background-color: #FFF5EE;
+  --dropdown-color: #FFB6D9;
+  --dropdown-hover: #FFA8CE;
+  --white: #ffffff;
+  --text-dark: #1f2937;
+  --text-gray: #6b7280;
+  --text-light: #9ca3af;
+  --transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 body {
@@ -32,8 +37,8 @@ body {
     border: 2px solid var(--primary-color);
     border-radius: 50%;
     position: fixed;
-    pointer-events: none;
-    z-index: 99999;
+    pointer-events: none !important;
+    z-index: 10000;
     transition: transform 0.1s ease;
 }
 
@@ -43,8 +48,8 @@ body {
     background: rgba(255, 107, 107, 0.3);
     border-radius: 50%;
     position: fixed;
-    pointer-events: none;
-    z-index: 99998;
+    pointer-events: none !important; 
+    z-index: 9999;
     transition: transform 0.3s ease;
     opacity: 0.6; /* Adjust visibility of the follower */
     transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); /* Smooth and interesting animation */
@@ -60,12 +65,13 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    transition: top 0.3s, background-color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 header.scrolled {
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
 }
 
 /* Navigation Styles */
@@ -234,14 +240,6 @@ nav {
     }
 }
 
-
-
-/* Members Section */
-.members-preview {
-    text-align: center;
-    padding: 3rem 2rem;
-}
-
 /* Emphasized Title */
 .meet-excos-title {
     font-size: 2.5rem;
@@ -270,18 +268,23 @@ nav {
 
 /* Excos Grid */
 .excos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* More responsive */
-    gap: 2rem;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* More responsive */
+    gap: 1.5rem;
+    justify-items: center;
     margin-top: 2rem;
-    max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 4rem; /* Added padding to push the button lower */
 }
 
+.meet-members-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
 /* Meet Our Members Button */
 .meet-members-btn {
-    display: inline-block;
     margin-top: 3rem; /* Increased margin to move the button lower */
     padding: 0.75rem 1.5rem;
     background-color: var(--primary-color);
@@ -314,6 +317,10 @@ nav {
 
 /* Exco Item */
 .exco-item {
+    width: auto;
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
     background: var(--white);
     border-radius: 15px;
     overflow: hidden;
@@ -486,7 +493,7 @@ nav {
         width: 100%;
         top: 0;
         z-index: 100;
-        transition: top 0.3s, background-color 0.3s, box-shadow 0.3s;
+        transition: background-color 0.3s, box-shadow 0.3s;
     }
 
     .hero-content {
@@ -1044,10 +1051,12 @@ section {
 
 /* Footer */
 footer {
-    background: var(--text-color);
-    color: var(--white);
-    padding: 3rem 2rem;
-    margin-top: 5rem;
+    background-color: #313030 !important; 
+    color: #ffffff;                       
+    padding: 60px 20px;
+    position: relative;                  
+    z-index: 10;                         
+    width: 100%;
 }
 
 .footer-content {
@@ -1055,19 +1064,28 @@ footer {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: 40px;
 }
 
+/* Ensures all links in the footer stay white and don't turn grey */
 .footer-links a {
-    color: var(--white);
+    color: #ffffff !important;
     text-decoration: none;
     display: block;
-    margin-bottom: 1rem;
-    transition: color 0.3s ease;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: var(--primary-color);
+    opacity: 0.8;
+    color: var(--primary-color) !important;
+}
+
+/* Titles inside the footer */
+.footer-links h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
 }
 
 .social-icons {
@@ -1283,9 +1301,19 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: transparent !important;
+    position: relative;
+    z-index: 1;
     min-height: 100vh;
     justify-content: center;
 
+}
+
+#particles-js {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .form-container {
@@ -1508,6 +1536,7 @@ footer {
         font-size: 1rem;
     }
 }
+
 
 @media screen and (max-width: 480px) {
     .why-donate {
@@ -2168,3 +2197,72 @@ footer {
     color: #2ecc71; /* green when valid */
 }
 
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.social-icons a {
+    /* 1. Define the 'Hitbox' */
+    display: flex;             /* Allows alignment of the icon inside */
+    align-items: center;
+    justify-content: center;
+    width: 45px;               /* Fixed width for the circular background */
+    height: 45px;              /* Fixed height */
+    border-radius: 50%;        /* Makes the background a perfect circle */
+    
+    /* 2. Initial State */
+    background-color: transparent; 
+    color: var(--white);       /* Icon color starts white */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle starting border */
+    text-decoration: none;
+    font-size: 1.3rem;
+    
+    /* 3. The Transition Secret */
+    /* This 'cubic-bezier' mimics the smooth GSAP feel of your crew page */
+    transition: 
+        background-color 0.4s ease, 
+        color 0.4s ease, 
+        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s ease;
+}
+
+/* 4. The Hover State (The 'Enlarging' Effect) */
+.social-icons a:hover {
+    background-color: var(--white) !important; /* Button turns white */
+    color: var(--primary-color) !important;   /* Icon turns your theme red/pink */
+    
+    /* This makes it enlarge smoothly */
+    transform: scale(1.2) translateY(-5px);    
+    
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
+    border-color: var(--white);
+}
+
+/* 5. Icon Specific Logic */
+.social-icons a i {
+    pointer-events: none; /* Ensures the mouse registers the link, not the icon */
+    transition: transform 0.4s ease;
+}
+
+.social-icons a:hover i {
+    transform: scale(1.1); /* Extra slight pop for the icon itself */
+}
+
+header .apply-btn,
+header .donate-btn {
+    padding: 1rem 1.4rem !important;
+
+    border-radius: 9999px !important;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    height: auto;
+    line-height: 1;
+    white-space: nowrap;
+}

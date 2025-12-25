@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Voitheia</title>
-        <link rel="icon" type="image/png" href="photos/Voitheia_logo.webp">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crew | Voitheia</title>
+    
+    <link rel="icon" type="image/webp" href="Voitheia-Photos/Voitheia_logo.webp"> 
+    <link rel="stylesheet" href="crew.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+
 <body>
-    <!-- Cursor elements -->
+    <div id="particles-js"></div>
+    
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
-    <!-- Header -->
     <header>
         <nav>
             <a href="index.html">
@@ -23,621 +29,190 @@
             </a>
             <div class="nav-links">
                 <a href="crew.html">Crew</a>
-                <!--<a href="bulletin.html">Bulletin</a>-->
                 <a href="projects.html">Projects</a>
                 <a href="accounts.html">Accounts</a>
-                <a href="apply.html" class="button apply-btn">Apply</a>
-                <a href="donate.html" class="button donate-btn">Donate</a>
+                <a href="apply.html" class="apply-btn">Apply</a>
+                <a href="donate.html" class="donate-btn">Donate</a>
             </div>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Members Section -->
-        <section>
-            <div class="members-preview">
-                <h2 class="meet-excos-title">The Crew</h2>
-                <div class="excos-grid">
-                    <!-- Image Placeholder 1 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/tanisha.webp" alt="Tanisha Bajaj" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Tanisha Bajaj</h3>
-                                <p class="exco-position">Co-Founder Voitheia</p>
-                            </div>
-                        </a>
+    <section class="crew-section">
+        <h1 class="page-title"><u>Our Crew</u></h1>
+
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search by name or role...">
+        </div>
+
+        <div class="accordion-controls">
+            <button id="expand-all">Expand All</button>
+            <button id="collapse-all">Collapse All</button>
+        </div>
+
+        <div class="accordion-container">
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h2>2025 - 2026 Excos</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="crew-grid">
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/rishi.webp" alt="Crew Member">
+                            <h3>Rishi M Shanbogue</h3>
+                            <p>President</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/Kaustav.webp" alt="Crew Member">
+                            <h3>Kaustav Gaur</h3>
+                            <p>President</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/Priyanshu.webp" alt="Crew Member">
+                            <h3>Priyanshu Vaidya</h3>
+                            <p>Treasurer</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/Aarav_Chatterjee.webp" alt="Crew Member" style="object-position: 50% 10%;">
+                            <h3>Aarav Chatterjee</h3>
+                            <p>Treasurer</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/tanishq.webp" alt="Crew Member" style="object-position: 50% 20%;">
+                            <h3>Tanishq Bhaskar Rao</h3>
+                            <p>IT Head</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/rashi.webp" alt="Crew Member" style="object-position: 50% 10%;">
+                            <h3>Rashi Motiramani</h3>
+                            <p>Program Manager</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/Dibyansu.webp" alt="Crew Member">
+                            <h3>Dibyansu Sahoo</h3>
+                            <p>Volunteer Coordinator</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/Rachael.webp" alt="Crew Member">
+                            <h3>Rachael Susan Mathew</h3>
+                            <p>Design Head</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/suditi.webp" alt="Crew Member">
+                            <h3>Suditi Chenna</h3>
+                            <p>Public Image Head</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/sana.webp" alt="Crew Member">
+                            <h3>Sana Mukhida</h3>
+                            <p>Event Management</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/sai.webp" alt="Crew Member">
+                            <h3>Sai Vishwak Gondimalla</h3>
+                            <p>Event Management</p>
+                        </div>
                     </div>
-                    <!-- Image Placeholder 2 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/priyal.webp" alt="Priyal Murarka" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Priyal Murarka</h3>
-                                <p class="exco-position">Co-Founder Voitheia</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Image Placeholder 3 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/prisha.webp" alt="Prisha Bakshi" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Prisha Bakshi</h3>
-                                <p class="exco-position">Operations Lead</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Image Placeholder 4 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/parth.webp" alt="Parth Shah" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Parth Shah</h3>
-                                <p class="exco-position">Public Image Head</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Image Placeholder 5 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/pranav.webp" alt="Pranav Moolapattu" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Pranav Moolapattu</h3>
-                                <p class="exco-position">Event Management Head</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Image Placeholder 6 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/aayushi.webp" alt="Aayushi Kumari" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Aayushi Kumari</h3>
-                                <p class="exco-position">History and Archives Head </p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Image Placeholder 7 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/dhruv.webp" alt="Dhruv Chanda" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Dhruv Chanda</h3>
-                                <p class="exco-position">Event Coordinator</Head></p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Image Placeholder 8 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/eeshani.webp" alt="Eeshani Dixit" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Eeshani Dixit</h3>
-                                <p class="exco-position">Secretary</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Image Placeholder 9 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/yashvi.webp" alt="Yashvi Chedda" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Yashvi Chedda</h3>
-                                <p class="exco-position">Design Lead</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Image Placeholder 10 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/hridhay.webp" alt="Hridhay Tilwani" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Hridhay Tilwani</h3>
-                                <p class="exco-position">Media Team Lead</Head></p>
-                            </div>
-                        </a>
-                    </div>  
-                    <!-- Image Placeholder 11 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/kruti.webp" alt="Kruti Oza" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Kruti Oza</h3>
-                                <p class="exco-position">Volunteer Coordinator Head</Head></p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Image Placeholder 12 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/mohini.webp" alt="Mohini Sharma" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Mohini Sharma</h3>
-                                <p class="exco-position">Head Treasurer</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Image Placeholder 13 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/aayushi.webp" alt="Shashvat Tripathi" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Shashvat Tripathi</h3>
-                                <p class="exco-position">Treasurer</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 14 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/aarav.webp" alt="Member 14" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Aarav Metia</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 15 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/ashwin.webp" alt="Member 15" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Shri Ashwin Venkatesan</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 16 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/rehan.webp" alt="Member 16" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Paigamber Birajdar</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 17 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/azhar.webp" alt="Member 17" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Azahar Shareif</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 18 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/shaurya.webp" alt="Member 18" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Shaurya garg</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 19 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/shreyansh.webp" alt="Member 19" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Shreyansh Rai</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 20 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/kaustav.webp" alt="Member 20" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Kaustav Gaur</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 21 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/rishi.webp" alt="Member 21" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Rishi M. Shanbhogue</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 22 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/tanishq.webp" alt="Member 22" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Tanishq Bhaskar Rao</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 23 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/vijay.webp" alt="Member 23" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Vijay Venkat</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 24 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/raashi.webp" alt="Member 24" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Rashi Motiramani</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 25 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/sai.webp" alt="Member 25" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Sai Vishwak Gondimalla</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 26 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/dibyanshu.webp" alt="Member 26" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Dibyansu Sahoo</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 27 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 27" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Bhavyaa Bisht</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 28 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 28" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Ganesh Sharma</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 29 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 29" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Ramakrishna</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 30 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 30" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Mehak Melwani</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 31 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 31" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Sheldon Feraro</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 32 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 32" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Jenil Kasandariya</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 33 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 33" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Arshiya Tandon</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 34 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 34" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Ashish John Vinu</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 35 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 35" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Jagriti Chaoudhary</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 36 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 36" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Vithika Singh</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 37 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 37" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Parth Sheth</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 38 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 38" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Saksham Falod</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 39 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 39" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Sanya Sinha</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 40 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 40" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Vinayak A.R</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 41 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 41" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Aarav Chatterjee</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 42 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 42" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Anshul Chauhan</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 43 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 43" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Harsimran Singh</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 44 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 44" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Roshan Rajesh</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 45 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 45" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Rachel Susan Mathew</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 45 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 46" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Anushka Singh</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 47 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 47" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Nishika Somwani</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 48 -->
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 48" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Kareena Patel</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--
-                    <!--  Member 49 --
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 49" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Michael Brown</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 50 --
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 50" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Sarah Lee</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 51 --
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 51" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">David Clark</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 52 --
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 52" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Emma Wilson</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 53 --
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 53" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Oliver Harris</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 54 --
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 54" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Oliver Harris</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 55 --
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 55" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Oliver Harris</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--  Member 56 --
-                    <div class="exco-item">
-                        <a href="#!" class="exco-link">
-                            <img src="photos/icon.webp" alt="Member 56" class="exco-image">
-                            <div class="exco-info">
-                                <h3 class="exco-name">Oliver Harris</h3>
-                                <p class="exco-position">Member</p>
-                            </div>
-                        </a>
-                    </div>
-                    -->
-            
                 </div>
             </div>
-        </section>
-    </main>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h2>2024 - 2025 Excos</h2>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="crew-grid">
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/tanisha.webp" alt="Crew Member">
+                            <h3>Tanisha Bajaj</h3>
+                            <p>Co-Founder Voitheia</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/priyal.webp" alt="Crew Member">
+                            <h3>Priyal Murarka</h3>
+                            <p>Co-Founder Voitheia</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/prisha.webp" alt="Crew Member">
+                            <h3>Prisha Bakshi</h3>
+                            <p>Operations Lead</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/parth.webp" alt="Crew Member">
+                            <h3>Parth Shah</h3>
+                            <p>Public Image Head</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/pranav.webp" alt="Crew Member">
+                            <h3>Pranav Moolapattu</h3>
+                            <p>Event Management Head</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/dhruv.webp" alt="Crew Member">
+                            <h3>Dhruv CHanda</h3>
+                            <p>Event Coordinator</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/eeshani.webp" alt="Crew Member">
+                            <h3>Eeshani Dixit</h3>
+                            <p>Secretary</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/yashvi.webp" alt="Crew Member">
+                            <h3>Yashvi Chedda</h3>
+                            <p>Design Lead</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/hridhay.webp" alt="Crew Member">
+                            <h3>Hriday Tilwani</h3>
+                            <p>Media Team Lead</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/kruti.webp" alt="Crew Member">
+                            <h3>Kruti Oza</h3>
+                            <p>Volunteer Coordinator Head</p>
+                        </div>
+                        <div class="crew-card">
+                            <img src="Voitheia-Photos/mohini.webp" alt="Crew Member">
+                            <h3>Mohini Sharma</h3>
+                            <p>Head Treasurer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Footer -->
+        </div>
+    </section>
+    
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <h3>Quick Links</h3>
+                <h3 class="quick-links"><u>Quick Links</u></h3>
                 <a href="crew.html">Crew</a>
-                <!--<a href="bulletin.html">Bulletin</a>-->
                 <a href="projects.html">Projects</a>
                 <a href="accounts.html">Accounts</a>
                 <a href="apply.html">Apply</a>
                 <a href="donate.html">Donate</a>
             </div>
             <div class="footer-links">
-                <h3>Connect With Us</h3>
+                <h3 class="connectwus"><u>Connect With Us</u></h3>
                 <div class="social-icons">
-                    <!--<a href="#"><i class="fab fa-youtube"></i></a>-->
-                    <!--<a href="#"><i class="fab fa-twitter"></i></a>-->
+                    <a href="https://www.linkedin.com/company/voitheia-org/"><i class="fab fa-linkedin"></i></a>
                     <a href="https://www.instagram.com/voitheia.ng?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer-links">
-                <h3>Contact</h3>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=voitheia.org@gmail.com&su=Hey Voitheia&body=Hi, I would like to know more about your organisation."
-                target="_blank"><i class="fas fa-envelope"></i> voitheia.org@gmail.com</a>
+                <h3 class="contact"><u>Contact</u></h3>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=voitheia.org@gmail.com&su=Hey Voitheia&body=Hi, I would like to know more about your organisation." target="_blank"><i class="fas fa-envelope"></i> voitheia.org@gmail.com</a>
                 <a href="tel:+2348055899033"><i class="fas fa-phone"></i> +234 805 589 9033</a>
             </div>
         </div>
     </footer>
 
-    <script src="js/cursor.js"></script>
     <script src="js/animations.js"></script>
-
+    <script src="js/crew.js"></script>
+    <script src="js/cursor.js"></script>
 </body>
 </html>
