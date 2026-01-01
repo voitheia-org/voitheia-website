@@ -5,6 +5,13 @@ gsap.registerPlugin(ScrollTrigger);
 let lastScrollTop = 0;
 const header = document.querySelector('header');
 
+const VOITHEIA_STATS = {
+    projects: 10,
+    funds: 2400000,
+    members: 117,
+    currencySymbol: '₦'
+};
+
 if (header) {
     window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -109,13 +116,13 @@ function animateCounter(element, target, prefix = '') {
             current = target;
             clearInterval(counter);
         }
+        // Added toLocaleString() to format numbers like 120,000
         element.textContent = prefix + Math.floor(current).toLocaleString();
     }, interval);
 }
 
 function initializeCounters() {
     const counterSection = document.querySelector('.counter-grid');
-    // FIXED: If section is not found, we exit immediately instead of retrying
     if (!counterSection) return; 
 
     ScrollTrigger.create({
@@ -126,9 +133,10 @@ function initializeCounters() {
             const fundsCounter = document.getElementById('fundsCounter');
             const membersCounter = document.getElementById('membersCounter');
             
-            if (projectCounter) animateCounter(projectCounter, 10);
-            if (fundsCounter) animateCounter(fundsCounter, 120000, '₦');
-            if (membersCounter) animateCounter(membersCounter, 117);
+            // Now pulling directly from the VOITHEIA_STATS object at the top
+            if (projectCounter) animateCounter(projectCounter, VOITHEIA_STATS.projects);
+            if (fundsCounter)   animateCounter(fundsCounter, VOITHEIA_STATS.funds, VOITHEIA_STATS.currencySymbol);
+            if (membersCounter) animateCounter(membersCounter, VOITHEIA_STATS.members);
         },
         once: true
     });
