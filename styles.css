@@ -2277,3 +2277,7 @@ header .donate-btn {
     line-height: 1;
     white-space: nowrap;
 }
+
+#projectCounter, #fundsCounter, #membersCounter {
+    will-change: contents; 
+}
