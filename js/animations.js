@@ -126,9 +126,9 @@ function initializeCounters() {
             const fundsCounter = document.getElementById('fundsCounter');
             const membersCounter = document.getElementById('membersCounter');
             
-            if (projectCounter) animateCounter(projectCounter, 3);
+            if (projectCounter) animateCounter(projectCounter, 10);
             if (fundsCounter) animateCounter(fundsCounter, 120000, '₦');
-            if (membersCounter) animateCounter(membersCounter, 56);
+            if (membersCounter) animateCounter(membersCounter, 117);
         },
         once: true
     });
