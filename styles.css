@@ -57,9 +57,8 @@ body {
 
 /* Header Styles */
 header {
-    background-color: var(--background-color);
+    background-color: transparent;
     padding: 0.5rem 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
