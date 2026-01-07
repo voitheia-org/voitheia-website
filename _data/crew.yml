@@ -1,0 +1,100 @@
+# - team:
+#   year: 
+#   members: 
+#   - name: 
+#     role: 
+#     image: /assets/images/crew/.webp
+
+- team:
+  year: 2025 - 2026 Excos
+  members: 
+  - name: Rishi M Shanbhogue
+    role: President
+    image: /assets/images/crew/rishi.webp
+
+  - name: Kaustav Gaur
+    role: President
+    image: /assets/images/crew/Kaustav.webp
+
+  - name: Priyanshu Vaidya
+    role: Treasurer
+    image: /assets/images/crew/Priyanshu.webp
+
+  - name: Aarav Chatterjee
+    role: Treasurer
+    image: /assets/images/crew/Aarav_Chatterjee.webp
+
+  - name: Tanishq Bhaskar Rao
+    role: IT Head
+    image: /assets/images/crew/tanishq.webp
+
+  - name: Rashi Motiramani
+    role: Program Manager
+    image: /assets/images/crew/rashi.webp
+
+  - name: Dibyansu Sahoo
+    role: Volunteer Coordinator
+    image: /assets/images/crew/Dibyansu.webp
+
+  - name: Rachael Susan Mathew
+    role: Design Head
+    image: /assets/images/crew/Rachael.webp
+
+  - name: Suditi Chenna
+    role: Public Image Head
+    image: /assets/images/crew/suditi.webp
+
+  - name: Sana Mukhida
+    role: Event Management
+    image: /assets/images/crew/sana.webp
+
+  - name: Sai Vishwak Gondimalla
+    role: Event Management
+    image: /assets/images/crew/sai.webp
+
+- team:
+  year: 2024 - 2025 Excos
+  members:
+    - name: Tanisha Bajaj
+      role: Co-Founder Voitheia
+      image: /assets/images/crew/tanisha.webp
+
+    - name: Priyal Murarka
+      role: Co-Founder Voitheia
+      image: /assets/images/crew/priyal.webp
+
+    - name: Prisha Bakshi
+      role: Operations Lead
+      image: /assets/images/crew/prisha.webp
+
+    - name: Parth Shah
+      role: Public Image Head
+      image: /assets/images/crew/parth.webp
+
+    - name: Pranav Moolapattu
+      role: IT Head
+      image: /assets/images/crew/pranav.webp
+
+    - name: Shashvat Tripathi
+      role: Treasurer
+      image: /assets/images/crew/shashvat.webp
+
+    - name: Eeshani Dixit
+      role: Secretary
+      image: /assets/images/crew/eeshani.webp
+
+    - name: Yashvi Chedda
+      role: Design Lead
+      image: /assets/images/crew/yashvi.webp
+
+    - name: Hriday Tilwani
+      role: Media Team Lead
+      image: /assets/images/crew/hridhay.webp
+
+    - name: Kruti Oza
+      role: Volunteer Coordinator Head
+      image: /assets/images/crew/kruti.webp
+
+    - name: Mohini Sharma
+      role: Head Treasurer
+      image: /assets/images/crew/mohini.webp

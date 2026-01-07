@@ -1,0 +1,115 @@
+# - project:
+#   num: 
+#   bg_img: /assets/images/gallery/.webp
+#   title: 
+#   modal:
+#   - location: 
+#     address: 
+#     media: 
+#     - type: image [or] video
+#       path: /assets/images/gallery/.webp
+#     description: 
+
+- project:
+  num: 1
+  bg_img: /assets/images/gallery/ourwork1.jpeg
+  title: Heritage Homes
+  modal:
+  - location: https://maps.app.goo.gl/xAhxgXCbXUM9wysb7
+    address: 45 Faramobi Ajike St, Anthony, Lagos 105102, Lagos, Nigeria
+    media:
+    - type: image
+      path: /assets/images/gallery/v2.webp
+    - type: image
+      path: /assets/images/gallery/v3.webp
+    - type: image
+      path: /assets/images/gallery/v4.webp
+    - type: image
+      path: /assets/images/gallery/v5.webp
+    - type: image
+      path: /assets/images/gallery/v6.webp
+    description: This was the very first initiative undertaken by Voitheia, marking the beginning of a meaningful journey. The staff at Heritage Homes welcomed us warmly and gave us the opportunity to spend time with the cheerful and energetic children. We provided them with thoughtful donations including books, stationery, toys, chocolates, and sweets, all collected through small contributions from our 15 founding members. Apart from the gifts, we connected with the children through interactive games and engaging activities, filling the day with laughter, learning, and joy.
+
+- project:
+  num: 2
+  bg_img: /assets/images/gallery/ourwork2.webp
+  title: Little Saint's Girls Orphanage
+  modal:
+  - location: https://maps.app.goo.gl/u4NGMEErsVq86q2S8
+    address: Dorcas Osibona House, 15 Joe Ona Agbato Cl, Ogudu, Lagos 105102, Lagos, Nigeria
+    media: 
+    - type: image
+      path: /assets/images/gallery/p21.webp
+    - type: image
+      path: /assets/images/gallery/p22.webp
+    - type: image
+      path: /assets/images/gallery/p23.webp
+    - type: image
+      path: /assets/images/gallery/p24.webp
+    - type: image
+      path: /assets/images/gallery/p25.webp
+    - type: image
+      path: /assets/images/gallery/p26.webp
+    description: Our second project created a unique space for our volunteers to connect with girls their own age, building a sense of shared understanding and empathy. We provided them with essential supplies, while also taking time to sit down and engage in heartfelt conversations that offered us a glimpse into their daily lives and personal stories. These sincere interactions left a lasting impression on our volunteers, deepening their compassion and broadening their perspective on the lives of others.
+
+- project:
+  num: 3
+  bg_img: /assets/images/gallery/ourwork3.webp
+  title: Bab Es Salaam Orphanage
+  modal:
+  - location: https://maps.app.goo.gl/KmYxTJZMBUWMNCPw8
+    address: 14 Joel Ogunnaike St, Ikeja GRA, Ikeja 101233, Lagos, Nigeria
+    media: 
+    - type: image
+      path: /assets/images/gallery/p31.webp
+    - type: image
+      path: /assets/images/gallery/p32.webp
+    - type: image
+      path: /assets/images/gallery/p33.webp
+    - type: image
+      path: /assets/images/gallery/p34.webp
+    - type: image
+      path: /assets/images/gallery/p35.webp
+    - type: image
+      path: /assets/images/gallery/p36.webp
+    description: This project stood out from Voitheia’s usual initiatives, as we extended our efforts toward supporting the post-event cleanup of the Indian Language School’s main campus after their vibrant and lively Bal Mela celebration. Volunteers from various age groups came together to take part in this thoughtful initiative, reinforcing the values of responsibility, cleanliness, and the importance of giving back through action. Working hand in hand with the school staff, our team efficiently cleared out plastic waste and paper trash, promoting recycling and setting an example of mindful community engagement.
+
+- project:
+  num: 4
+  bg_img: /assets/images/gallery/ourwork4.webp
+  title: Indian Language School
+  modal:
+  - location: https://maps.app.goo.gl/XhYahAxxfiW15BdX88
+    address: 14/16 Obanle Aro Cres, Ilupeju, Lagos 100252, Lagos, Nigeria
+    media: 
+    - type: image
+      path: /assets/images/gallery/p41.webp
+    - type: image
+      path: /assets/images/gallery/p42.webp
+    - type: image
+      path: /assets/images/gallery/p43.webp
+    - type: image
+      path: /assets/images/gallery/p44.webp
+    - type: image
+      path: /assets/images/gallery/p45.webp
+    description: Our third project brought together a larger team of volunteers from different grades, creating a vibrant and collaborative environment filled with energy and enthusiasm. With increased support and funding, we were able to collect a wider range of toys and valuable resources that brought visible excitement and joy to the children. We also organized a series of sports and fun games, encouraging every child to participate and enjoy the spirit of healthy competition — with prizes and cheers all around.
+
+- project:
+  num: 5
+  bg_img: /assets/images/gallery/ourwork5.webp
+  title: Children Centre
+  modal:
+  - location: https://maps.app.goo.gl/eeawp4hCrojR9aeBA
+    address: 11 13 Ojerinde St, Mushin, Lagos 102215, Lagos, Nigeria
+    media: 
+    - type: image
+      path: /assets/images/gallery/p51.webp
+    - type: image
+      path: /assets/images/gallery/p52.webp
+    - type: video
+      path: /assets/images/gallery/p53.mp4
+    - type: image
+      path: /assets/images/gallery/p54.webp
+    - type: image
+      path: /assets/images/gallery/p55.webp
+    description: Our third project brought together a larger team of volunteers from different grades, creating a vibrant and collaborative environment filled with energy and enthusiasm. With increased support and funding, we were able to collect a wider range of toys and valuable resources that brought visible excitement and joy to the children. We also organized a series of sports and fun games, encouraging every child to participate and enjoy the spirit of healthy competition — with prizes and cheers all around.

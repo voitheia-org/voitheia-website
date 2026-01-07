@@ -1,278 +1,296 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="google-site-verification" content="fx6ayY6uyVIv4IMNquTJyVfj6ggGaFnXeLDxO0w5EQc" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voitheia</title>
-    <link rel="icon" type="image/png" href="photos/Voitheia_logo.webp">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-</head>
-<body>
-    <!-- Cursor elements -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="index.html">
-                <img src="photos/Voitheia_logo.webp" alt="Voitheia Logo" class="logo">
-            </a>
-            <div class="nav-links">
-                <a href="crew.html">Crew</a>
-                <!--<a href="bulletin.html">Bulletin</a>-->
-                <a href="projects.html">Projects</a>
-                <a href="accounts.html">Accounts</a>
-                <a href="apply.html" class="button apply-btn">Apply</a>
-                <a href="donate.html" class="button donate-btn">Donate</a>
-            </div>
-        </nav>
-    </header>
-    
-
-    <main>
+---
+layout: default
+---
 <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1 class="voitheia-title">VOITHEIA</h1>
-        <h2 class="animated-text">Where Compassion Meets Action</h2>
-        <div class="mission-statement">
-            <p><span class="highlight">Empowering students</span> to create positive change through compassionate action and community service.</p>
-            <p>Join us in <span class="highlight">making a difference,</span> one act of kindness at a time.</p>
-        </div>
-        <div class="scroll-incentive">
-            <a href="#problem-statement">
-                <div class="arrow"></div>
-            </a>
-        </div>
-    </div>
-    <img src="photos/main.webp" alt="Students helping community" class="background-image">
-</section>
-
-<!-- Problem Statement Section -->
-<section class="problem-statement-section" id="problem-statement">
-    <div class="section-content">
-        <h2 class="section-title2">Identifying the Challenge</h2>
-        <div class="problem-container">
-            <div class="text-content">
-                <p class="problem-text">
-                    <span class="highlight">Millions of children</span> around the world grow up with little to no awareness of <span class="highlight">community service</span>, leaving countless opportunities for meaningful change unrealized.
-                </p>
-                <p class="problem-text">
-                    Voitheia began as an idea to allow students to engage with <span class="highlight">less fortunate children</span> of all ages and learn from these invaluable experiences. By fostering a sense of <span class="highlight">community</span>, we aim to shape the mindset of young adults who will lead the future with the goal of <span class="highlight">helping each other</span>.
-                </p>
-            </div>
-            <img src="photos/challenge.webp" alt="Community Service Image" class="image-placeholder-unique">
-        </div>
-    </div>
-</section>
-
-<!-- Why Choose Voitheia Section -->
-<section class="why-choose-section">
-    <div class="section-content">
-        <h2 class="section-title1">What we stand for</h2>
-        <div class="info-grid">
-            <div class="info-card">
-                <div class="card-icon">
-                    <span class="icon">🌱</span>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Making a Real Impact</h3>
-                    <p class="card-text">At Voitheia, we empower you to take action and create a lasting impact in your community.</p>
-                </div>
-            </div>
-            <div class="info-card">
-                <div class="card-icon">
-                    <span class="icon">🚀</span>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Developing Leadership Skills</h3>
-                    <p class="card-text">Gain valuable leadership experience that will set you apart and help you grow personally and professionally.</p>
-                </div>
-            </div>
-            <div class="info-card">
-                <div class="card-icon">
-                    <span class="icon">🤝</span>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Building Lasting Connections</h3>
-                    <p class="card-text">Join a network of like-minded changemakers and forge meaningful connections that will support your journey.</p>
-                </div>
-            </div>
-            <div class="info-card">
-                <div class="card-icon">
-                    <span class="icon">🎓</span>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Gaining Valuable Experience</h3>
-                    <p class="card-text">Enhance your resume with hands-on projects, mentoring, and learning opportunities in a dynamic environment.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="our-history-section">
-    <h2 class="section-title">OUR WORK</h2>
-    <div class="history-container">
-        <div class="history-item">
-            <div class="history-content">
-                <h3 class="history-subtitle">Project 1: Heritage Homes</h3>
-                <p class="history-text">
-                    Our journey began with just 15 members and no monetary funds, relying solely on small donations. Through collective effort, we gathered books, stationery, toys, chocolates, and sweets to create a meaningful collection for the children. Beyond donations, we engaged with them through interactive games and fun activities, bringing joy and smiles to their faces.</p>
-                </div>
-            <div class="history-image">
-                <img src="photos/ourwork1.webp" alt="2020: The Beginning" class="history-img">
-            </div>
-        </div>
-        <div class="history-item">
-            <div class="history-content">
-                    <h3 class="history-subtitle">Project 2: Little Saint's Girls Orphanage <span class="tooltip-wrapper">
-                        <a href="https://www.google.com/search?q=COCHIN+photo+policy+Nigerian+orphanages&sca_esv=000223f181a12c46&sxsrf=AE3TifO9_tWUaOGIefNKb9mpCPClVrFR6Q%3A1751029201071&ei=0ZVeaIaNBOuY4-EPxP-isQw&ved=0ahUKEwjGuZWM1JGOAxVrzDgGHcS_KMYQ4dUDCBA&uact=5&oq=COCHIN+photo+policy+Nigerian+orphanages&gs_lp=Egxnd3Mtd2l6LXNlcnAiJ0NPQ0hJTiBwaG90byBwb2xpY3kgTmlnZXJpYW4gb3JwaGFuYWdlczIFEAAY7wUyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogRIxF1QlwZYxjpwAngAkAEAmAGgAaAB8AaqAQMxLja4AQPIAQD4AQGYAgigAugFwgIIEAAYsAMY7wXCAgsQABiABBiwAxiiBJgDAIgGAZAGBJIHAzMuNaAHvBmyBwMxLjW4B-EFwgcDMC44yAcT&sclient=gws-wiz-serp"
-                           class="info-icon"
-                           target="_blank">?</a>
-                        <span class="tooltip-text">Learn why we blur faces</span>
-                      </span>                  
-                    </h3>
-                <p class="history-text">
-                    Our second project brought volunteers closer to girls their own age. Beyond donating essential supplies, we engaged in heartfelt conversations, gaining insight into their lives and experiences. These meaningful interactions left a profound impact on the volunteers, fostering empathy and deeper understanding.</p>
-            </div>
-            <div class="history-image">
-                <img src="photos/ourwork2.webp" alt="2021: Growth and Impact" class="history-img">
-            </div>
-        </div>
-        <div class="history-item">
-            <div class="history-content">
-                <h3 class="history-subtitle">Project 3: Bab Es Salaam Orphanage</h3>
-                <p class="history-text">
-                    Our most recent project saw a larger group of volunteers from different grades, along with increased funding that allowed us to gather even more toys and resources. The children truly enjoyed the gifts, and we organized sports and various games, giving everyone the chance to participate and win prizes.</p>
-                
-            </div>
-            <div class="history-image">
-                <img src="photos/ourwork3.webp" alt="2023: Building a Legacy" class="history-img">
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-<!-- Counter Section -->
-<section class="counter-section">
-    <h2 class="section-title1">Our Impact</h2>
-    <div class="counter-grid">
-        <div class="counter-item">
-            <div class="counter-number" id="projectCounter">0</div>
-            <p style="color: var(--primary-color);">Projects Completed</p>
-            <a href="bulletin.html" class="card-learn-btn">Learn More</a> <!-- Added Learn More button -->
-        </div>
-        <div class="counter-item">
-            <div class="counter-number" id="fundsCounter">₦0</div>
-            <p style="color: var(--primary-color);">Funds Raised</p>
-            <a href="donate.html" class="card-donate-btn">+1</a>
-        </div>
-        <div class="counter-item">
-            <div class="counter-number" id="membersCounter">0</div>
-            <p style="color: var(--primary-color);">Members</p>
-            <a href="apply.html" class="card-apply-btn">+1</a>
-        </div>
-    </div>
-</section>
-
-
-<!-- Members Section -->
-<section>
-    <div class="members-preview">
-        <h2 class="meet-excos-title">Meet The Excos</h2> <!-- Updated Title -->
-        <p align = "justify">Our Excos are the driving force behind Voitheia. They lead with vision, passion, and a deep commitment to our mission. Get to know the faces who make everything possible and help us take our initiatives to new heights.</p>
-        <div class="excos-grid">
-            <div class="exco-item">
-                <a href="#!" class="exco-link">
-                    <img src="Voitheia-Photos/tanisha.webp" alt="Tanisha Bajaj" class="exco-image">
-                    <div class="exco-info">
-                        <h3 class="exco-name">Tanisha Bajaj</h3>
-                        <p class="exco-position">Co-Founder Voitheia</p>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="voitheia-title">VOITHEIA</h1>
+                    <h2 class="animated-text">Where Compassion Meets Action</h2>
+                    <div class="mission-statement">
+                        <p><span class="highlight">Empowering students</span> to create positive change through compassionate action and community service.</p>
+                        <p>Join us in <span class="highlight">making a difference,</span> one act of kindness at a time.</p>
                     </div>
-                </a>
-            </div>
-            <div class="exco-item">
-                <a href="#!" class="exco-link">
-                    <img src="Voitheia-Photos/priyal.webp" alt="Priyal Murarka" class="exco-image">
-                    <div class="exco-info">
-                        <h3 class="exco-name">Priyal Murarka</h3>
-                        <p class="exco-position">Co-Founder Voitheia</p>
+                    <div class="scroll-incentive">
+                        <a href="#problem-statement">
+                            <div class="arrow"></div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <div class="exco-item">
-                <a href="#!" class="exco-link">
-                    <img src="Voitheia-Photos/prisha.webp" alt="Priyal Murarka" class="exco-image">
-                    <div class="exco-info">
-                        <h3 class="exco-name">Prisha Bakshi</h3>
-                        <p class="exco-position">Operations Lead</p>
-                    </div>
-                </a>
-            </div>
-        </div> 
-        <div class="meet-members-wrapper">
-            <a href="crew.html" class="meet-members-btn">Meet Our Members</a> 
-        </div>
-    </div>
-</section>
-
-
-
-<!-- Transparency Section -->
-<section class="transparency-section">
-    <div class="transparency-container">
-        <div class="info-content">
-            <h2>Transparency</h2>
-            <p>We believe in complete <strong>transparency</strong> in all our operations. Every donation is tracked and reported, ensuring your contribution creates maximum <strong>impact</strong>. Regular updates and detailed reports keep you informed about how your support makes a difference.</p>
-        </div>
-        <div class="button-container">
-            <a href="accounts.html" class="view-log-button">View Log</a>
-        </div>
-    </div>
-</section>
-
-
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <a href="crew.html">Crew</a>
-                <!--<a href="bulletin.html">Bulletin</a>-->
-                <a href="projects.html">Projects</a>
-                <a href="accounts.html">Accounts</a>
-                <a href="apply.html">Apply</a>
-                <a href="donate.html">Donate</a>
-            </div>
-            <div class="footer-links">
-                <h3>Connect With Us</h3>
-                <div class="social-icons">
-                    <!--<a href="#"><i class="fab fa-youtube"></i></a>-->
-                    <a href="https://www.linkedin.com/company/voitheia-org/"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/voitheia.ng?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
                 </div>
-            </div>
-            <div class="footer-links">
-                <h3>Contact</h3>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=voitheia.org@gmail.com&su=Hey Voitheia&body=Hi, I would like to know more about your organisation."
-                target="_blank"><i class="fas fa-envelope"></i> voitheia.org@gmail.com</a>
-                <a href="tel:+2348055899033"><i class="fas fa-phone"></i> +234 805 589 9033</a>
-            </div>
-        </div>
-    </footer>
+                <img src="/assets/images/voitheia/main.webp" alt="Students helping community" class="background-image">
+            </section>
 
-    <!-- Scripts -->
-    <script src="js/cursor.js"></script>
-    <script src="js/animations.js?v=1.02"></script>
-</body>
-</html>
+            <!-- Problem Statement Section -->
+            <section class="problem-statement-section" id="problem-statement">
+                <div class="section-content">
+                    <h2 class="section-title2">Identifying the Challenge</h2>
+                    <div class="problem-container">
+                        <div class="text-content">
+                            <p class="problem-text">
+                                <span class="highlight">Millions of children</span> around the world grow up with little to no awareness of <span class="highlight">community service</span>, leaving countless opportunities for meaningful change unrealized.
+                            </p>
+                            <p class="problem-text">
+                                Voitheia began as an idea to allow students to engage with <span class="highlight">less fortunate children</span> of all ages and learn from these invaluable experiences. By fostering a sense of <span class="highlight">community</span>, we aim to shape the mindset of young adults who will lead the future with the goal of <span class="highlight">helping each other</span>.
+                            </p>
+                        </div>
+                        <img src="/assets/images/gallery/challenge.webp" alt="Community Service Image" class="image-placeholder-unique">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Voitheia Section -->
+            <section class="why-choose-section">
+                <div class="section-content">
+                    <h2 class="section-title1">What we stand for</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <span class="icon">🌱</span>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Making a Real Impact</h3>
+                                <p class="card-text">At Voitheia, we empower you to take action and create a lasting impact in your community.</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <span class="icon">🚀</span>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Developing Leadership Skills</h3>
+                                <p class="card-text">Gain valuable leadership experience that will set you apart and help you grow personally and professionally.</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <span class="icon">🤝</span>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Building Lasting Connections</h3>
+                                <p class="card-text">Join a network of like-minded changemakers and forge meaningful connections that will support your journey.</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="card-icon">
+                                <span class="icon">🎓</span>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Gaining Valuable Experience</h3>
+                                <p class="card-text">Enhance your resume with hands-on projects, mentoring, and learning opportunities in a dynamic environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="our-history-section">
+                <h2 class="section-title">OUR WORK</h2>
+                <div class="history-container">
+                    <div class="history-item">
+                        <div class="history-content">
+                            <h3 class="history-subtitle">Project 1: Heritage Homes</h3>
+                            <p class="history-text">
+                                Our journey began with just 15 members and no monetary funds, relying solely on small donations. Through collective effort, we gathered books, stationery, toys, chocolates, and sweets to create a meaningful collection for the children. Beyond donations, we engaged with them through interactive games and fun activities, bringing joy and smiles to their faces.</p>
+                            </div>
+                        <div class="history-image">
+                            <img src="/assets/images/gallery/ourwork1.webp" alt="2020: The Beginning" class="history-img">
+                        </div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-content">
+                                <h3 class="history-subtitle">Project 2: Little Saint's Girls Orphanage <span class="tooltip-wrapper">
+                                    <a href="https://www.google.com/search?q=COCHIN+photo+policy+Nigerian+orphanages&sca_esv=000223f181a12c46&sxsrf=AE3TifO9_tWUaOGIefNKb9mpCPClVrFR6Q%3A1751029201071&ei=0ZVeaIaNBOuY4-EPxP-isQw&ved=0ahUKEwjGuZWM1JGOAxVrzDgGHcS_KMYQ4dUDCBA&uact=5&oq=COCHIN+photo+policy+Nigerian+orphanages&gs_lp=Egxnd3Mtd2l6LXNlcnAiJ0NPQ0hJTiBwaG90byBwb2xpY3kgTmlnZXJpYW4gb3JwaGFuYWdlczIFEAAY7wUyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogRIxF1QlwZYxjpwAngAkAEAmAGgAaAB8AaqAQMxLja4AQPIAQD4AQGYAgigAugFwgIIEAAYsAMY7wXCAgsQABiABBiwAxiiBJgDAIgGAZAGBJIHAzMuNaAHvBmyBwMxLjW4B-EFwgcDMC44yAcT&sclient=gws-wiz-serp"
+                                    class="info-icon"
+                                    target="_blank">?</a>
+                                    <span class="tooltip-text">Learn why we blur faces</span>
+                                </span>                  
+                                </h3>
+                            <p class="history-text">
+                                Our second project brought volunteers closer to girls their own age. Beyond donating essential supplies, we engaged in heartfelt conversations, gaining insight into their lives and experiences. These meaningful interactions left a profound impact on the volunteers, fostering empathy and deeper understanding.</p>
+                        </div>
+                        <div class="history-image">
+                            <img src="/assets/images/gallery/ourwork2.webp" alt="2021: Growth and Impact" class="history-img">
+                        </div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-content">
+                            <h3 class="history-subtitle">Project 3: Bab Es Salaam Orphanage</h3>
+                            <p class="history-text">
+                                Our most recent project saw a larger group of volunteers from different grades, along with increased funding that allowed us to gather even more toys and resources. The children truly enjoyed the gifts, and we organized sports and various games, giving everyone the chance to participate and win prizes.</p>
+                            
+                        </div>
+                        <div class="history-image">
+                            <img src="/assets/images/gallery/ourwork3.webp" alt="2023: Building a Legacy" class="history-img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!-- Counter Section -->
+            <section class="counter-section">
+                <h2 class="section-title1">Our Impact</h2>
+                <div class="counter-grid">
+                    <div class="counter-item">
+                        <div class="counter-number" id="projectCounter">0</div>
+                        <p style="color: var(--primary-color);">Projects Completed</p>
+                        {%include pill-btn.html text='VIEW PROJECTS' url='/projects.html'%}
+                    </div>
+                    <div class="counter-item"> 
+                        <div class="counter-number" id="fundsCounter">₦0</div>
+                        <p style="color: var(--primary-color);">Funds Raised</p>
+                        {%include pill-btn.html text='DONATE' url='/donate.html'%}
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-number" id="membersCounter">0</div>
+                        <p style="color: var(--primary-color);">Members</p>
+                        {%include pill-btn.html text='APPLY' url='/apply.html'%}
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Members Section -->
+            <section>
+                <div class="members-preview">
+                    <h2 class="meet-excos-title">Meet The Excos</h2> <!-- Updated Title -->
+                    <p align = "justify">Our Excos are the driving force behind Voitheia. They lead with vision, passion, and a deep commitment to our mission. Get to know the faces who make everything possible and help us take our initiatives to new heights.</p>
+                    <div class="excos-grid">
+                        <!-- Image Placeholder 1 -->
+                        <div class="exco-item">
+                            <a href="#!" class="exco-link">
+                                <img src="/assets/images/crew/tanisha.webp" alt="Tanisha Bajaj" class="exco-image">
+                                <div class="exco-info">
+                                    <h3 class="exco-name">Tanisha Bajaj</h3>
+                                    <p class="exco-position">Co-Founder Voitheia</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Image Placeholder 2 -->
+                        <div class="exco-item">
+                            <a href="#!" class="exco-link">
+                                <img src="/assets/images/crew/priyal.webp" alt="Priyal Murarka" class="exco-image">
+                                <div class="exco-info">
+                                    <h3 class="exco-name">Priyal Murarka</h3>
+                                    <p class="exco-position">Co-Founder Voitheia</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Image Placeholder 3 -->
+                        <div class="exco-item">
+                            <a href="#!" class="exco-link">
+                                <img src="/assets/images/crew/prisha.webp" alt="Prisha Bakshi" class="exco-image">
+                                <div class="exco-info">
+                                    <h3 class="exco-name">Prisha Bakshi</h3>
+                                    <p class="exco-position">Operations Lead</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Image Placeholder 4 -->
+                        <div class="exco-item">
+                            <a href="#!" class="exco-link">
+                                <img src="/assets/images/crew/parth.webp" alt="Parth Shah" class="exco-image">
+                                <div class="exco-info">
+                                    <h3 class="exco-name">Parth Shah</h3>
+                                    <p class="exco-position">Public Image Head</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Image Placeholder 5 -->
+                        <div class="exco-item">
+                            <a href="#!" class="exco-link">
+                                <img src="/assets/images/crew/pranav.webp" alt="Pranav Moolapattu" class="exco-image">
+                                <div class="exco-info">
+                                    <h3 class="exco-name">Pranav Moolapattu</h3>
+                                    <p class="exco-position">Event Management Head</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Image Placeholder 6 -->
+                        <div class="exco-item">
+                            <a href="#!" class="exco-link">
+                                <img src="/assets/images/crew/aayushi.webp" alt="Aayushi Kumari" class="exco-image">
+                                <div class="exco-info">
+                                    <h3 class="exco-name">Aayushi Kumari</h3>
+                                    <p class="exco-position">History and Archives Head </p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Image Placeholder 7 -->
+                        <!--<div class="exco-item">
+                            <a href="#!" class="exco-link">
+                                <img src="photos/dhruv.webp" alt="Dhruv Chanda" class="exco-image">
+                                <div class="exco-info">
+                                    <h3 class="exco-name">Dhruv Chanda</h3>
+                                    <p class="exco-position">Event Coordinator</Head></p>
+                                </div>
+                            </a>
+                        </div> -->
+                        <!-- Image Placeholder 8 -->
+                        <!--<div class="exco-item">
+                            <a href="#!" class="exco-link">
+                                <img src="photos/eeshani.webp" alt="Eeshani Dixit" class="exco-image">
+                                <div class="exco-info">
+                                    <h3 class="exco-name">Eeshani Dixit</h3>
+                                    <p class="exco-position">Secretary</p>
+                                </div>
+                            </a>
+                        </div>-->
+                        <!-- Image Placeholder 9 -->
+                        <div class="exco-item">
+                            <a href="#!" class="exco-link">
+                                <img src="/assets/images/crew/yashvi.webp" alt="Yashvi Chedda" class="exco-image">
+                                <div class="exco-info">
+                                    <h3 class="exco-name">Yashvi Chedda</h3>
+                                    <p class="exco-position">Design Lead</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Image Placeholder 10 -->
+                        <!-- <div class="exco-item">
+                            <a href="#!" class="exco-link">
+                                <img src="photos/hridhay.webp" alt="Hridhay Tilwani" class="exco-image">
+                                <div class="exco-info">
+                                    <h3 class="exco-name">Hridhay Tilwani</h3>
+                                    <p class="exco-position">Media Team Lead</Head></p>
+                                </div>
+                            </a>
+                        </div>  -->
+                        <!-- Image Placeholder 11 -->
+                        <div class="exco-item">
+                            <a href="#!" class="exco-link">
+                                <img src="/assets/images/crew/kruti.webp" alt="Kruti Oza" class="exco-image">
+                                <div class="exco-info">
+                                    <h3 class="exco-name">Kruti Oza</h3>
+                                    <p class="exco-position">Volunteer Coordinator Head</Head></p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Image Placeholder 12 -->
+                        <div class="exco-item">
+                            <a href="#!" class="exco-link">
+                                <img src="/assets/images/crew/mohini.webp" alt="Mohini Sharma" class="exco-image">
+                                <div class="exco-info">
+                                    <h3 class="exco-name">Mohini Sharma</h3>
+                                    <p class="exco-position">Head Treasurer</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div> 
+                    {%include pill-btn.html text='MEET OUR MEMBERS' url='/crew.html'%}
+                </div>
+            </section>
+
+
+
+            <!-- Transparency Section -->
+            <section class="transparency-section">
+                <div class="transparency-container">
+                    <div class="info-content">
+                        <h2>Transparency</h2>
+                        <p>We believe in complete <strong>transparency</strong> in all our operations. Every donation is tracked and reported, ensuring your contribution creates maximum <strong>impact</strong>. Regular updates and detailed reports keep you informed about how your support makes a difference.</p>
+                    </div>
+                    {%include pill-btn.html text='VIEW LOG' url='/accounts.html'%}
+                </div>
+            </section>

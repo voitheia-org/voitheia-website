@@ -1,0 +1,52 @@
+<style>
+    .pill-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--primary-color);
+      color: white;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      border: 2px solid var(--primary-color);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      min-width: fit-content;
+    }
+  
+    .pill-button:hover {
+      background-color: black;
+      color: var(--primary-color);
+      border-color: black;
+    }
+  
+    .pill-button:focus {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+  
+    .pill-button:active {
+      transform: scale(0.98);
+    }
+  
+    @media (max-width: 768px) {
+      .pill-button {
+        padding: 0.875rem 1.75rem;
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .pill-button {
+        padding: 0.75rem 1.5rem;
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+</style>
+  
+<a href="{{ include.url | default: '#' }}" class="pill-button" {% if include.target %}target="{{ include.target }}"{% endif %} {% if include.rel %}rel="{{ include.rel }}"{% endif %}>
+{{ include.text | default: "Click Me" }}
+</a>

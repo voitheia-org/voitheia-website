@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html%}
+</head>
+<body>
+    <!-- Cursor elements -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    {% if page.url == '/crew.html' or page.url == '/apply.html'%}
+    <div id="particles-js"></div>
+    {% endif %}
+
+    {% include header.html%}
+    
+        <main>
+            {{ content }}
+        </main>
+
+    {% include footer.html %}
+
+    <!-- Scripts -->
+    <script src="/assets/js/cursor.js"></script>
+    <script src="/assets/js/animations.js"></script>
+    <script src="/assets/js/form.js"></script>
+    <script src="/assets/js/crew.js"></script>
+</body>
+</html>

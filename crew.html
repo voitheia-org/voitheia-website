@@ -1,41 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crew | Voitheia</title>
-    
-    <link rel="icon" type="image/webp" href="Voitheia-Photos/Voitheia_logo.webp"> 
-    <link rel="stylesheet" href="styles.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-</head>
-
-<body>
-    <div id="particles-js"></div>
-    
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
-    <header>
-        <nav>
-            <a href="index.html">
-                <img src="photos/Voitheia_logo.webp" alt="Voitheia Logo" class="logo">
-            </a>
-            <div class="nav-links">
-                <a href="crew.html">Crew</a>
-                <a href="projects.html">Projects</a>
-                <a href="accounts.html">Accounts</a>
-                <a href="apply.html" class="apply-btn">Apply</a>
-                <a href="donate.html" class="donate-btn">Donate</a>
-            </div>
-        </nav>
-    </header>
-
+---
+layout: default 
+---
     <section class="crew-section">
         <h1 class="page-title fade-in"><u>Our Crew</u></h1>
 
@@ -49,177 +14,29 @@
         </div>
 
         <div class="accordion-container">
-
-            <!-- 2025 - 2026 Excos -->
+            {%for team in site.data.crew%}
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h2>2025 - 2026 Excos</h2>
+                    <h2>{{team.year}}</h2>
                     <span class="toggle-icon">+</span>
                 </div>
                 <div class="accordion-content">
                     <div class="crew-grid">
+
+                        {%for member in team.members %}
                         <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/rishi.webp" alt="Rishi M Shanbogue">
-                            <h3>Rishi M Shanbogue</h3>
-                            <p>President</p>
+                            <img src="{{member.image}}" alt="{{member.name}}">
+                            <h3>{{member.name}}</h3>
+                            <p>{{member.role}}</p>
                         </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/Kaustav.webp" alt="Kaustav Gaur">
-                            <h3>Kaustav Gaur</h3>
-                            <p>President</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/Priyanshu.webp" alt="Priyanshu Vaidya">
-                            <h3>Priyanshu Vaidya</h3>
-                            <p>Treasurer</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/Aarav_Chatterjee.webp" alt="Aarav Chatterjee" style="object-position:50% 10%;">
-                            <h3>Aarav Chatterjee</h3>
-                            <p>Treasurer</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/tanishq.webp" alt="Tanishq Bhaskar Rao" style="object-position:50% 20%;">
-                            <h3>Tanishq Bhaskar Rao</h3>
-                            <p>IT Head</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/rashi.webp" alt="Rashi Motiramani" style="object-position:50% 10%;">
-                            <h3>Rashi Motiramani</h3>
-                            <p>Program Manager</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/Dibyansu.webp" alt="Dibyansu Sahoo">
-                            <h3>Dibyansu Sahoo</h3>
-                            <p>Volunteer Coordinator</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/Rachael.webp" alt="Rachel Susan Mathew">
-                            <h3>Rachel Susan Mathew</h3>
-                            <p>Design Head</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/suditi.webp" alt="Suditi Chenna">
-                            <h3>Suditi Chenna</h3>
-                            <p>Public Image Head</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/sana.webp" alt="Sana Mukhida">
-                            <h3>Sana Mukhida</h3>
-                            <p>Event Management</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/sai.webp" alt="Sai Vishwak Gondimalla">
-                            <h3>Sai Vishwak Gondimalla</h3>
-                            <p>Event Management</p>
-                        </div>
+                        {%endfor%}
                     </div>
                 </div>
             </div>
-
-            <!-- 2024 - 2025 Excos -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <h2>2024 - 2025 Excos</h2>
-                    <span class="toggle-icon">+</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="crew-grid">
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/tanisha.webp" alt="Tanisha Bajaj">
-                            <h3>Tanisha Bajaj</h3>
-                            <p>Co-Founder Voitheia</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/priyal.webp" alt="Priyal Murarka">
-                            <h3>Priyal Murarka</h3>
-                            <p>Co-Founder Voitheia</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/prisha.webp" alt="Prisha Bakshi">
-                            <h3>Prisha Bakshi</h3>
-                            <p>Operations Lead</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/parth.webp" alt="Parth Shah">
-                            <h3>Parth Shah</h3>
-                            <p>Public Image Head</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/shashvat.webp" alt="Parth Shah">
-                            <h3>Shashvat Tripathi</h3>
-                            <p>Treasurer</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/pranav.webp" alt="Pranav Moolapattu">
-                            <h3>Pranav Moolapattu</h3>
-                            <p>Event Management Head</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/dhruv.webp" alt="Dhruv Chanda">
-                            <h3>Dhruv Chanda</h3>
-                            <p>Event Coordinator</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/eeshani.webp" alt="Eeshani Dixit">
-                            <h3>Eeshani Dixit</h3>
-                            <p>Secretary</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/yashvi.webp" alt="Yashvi Chedda">
-                            <h3>Yashvi Chedda</h3>
-                            <p>Design Lead</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/hridhay.webp" alt="Hriday Tilwani">
-                            <h3>Hriday Tilwani</h3>
-                            <p>Media Team Lead</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/kruti.webp" alt="Kruti Oza">
-                            <h3>Kruti Oza</h3>
-                            <p>Volunteer Coordinator Head</p>
-                        </div>
-                        <div class="crew-card fade-in">
-                            <img src="Voitheia-Photos/mohini.webp" alt="Mohini Sharma">
-                            <h3>Mohini Sharma</h3>
-                            <p>Head Treasurer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            {%endfor%}
         </div>
     </section>
     
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <h3 class="quick-links"><u>Quick Links</u></h3>
-                <a href="crew.html">Crew</a>
-                <a href="projects.html">Projects</a>
-                <a href="accounts.html">Accounts</a>
-                <a href="apply.html">Apply</a>
-                <a href="donate.html">Donate</a>
-            </div>
-            <div class="footer-links">
-                <h3 class="connectwus"><u>Connect With Us</u></h3>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/company/voitheia-org/"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/voitheia.ng"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h3 class="contact"><u>Contact</u></h3>
-                <a href="mailto:voitheia.org@gmail.com"><i class="fas fa-envelope"></i> voitheia.org@gmail.com</a>
-                <a href="tel:+2348055899033"><i class="fas fa-phone"></i> +234 805 589 9033</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/animations.js"></script>
-    <script src="js/crew.js"></script>
-    <script src="js/cursor.js"></script>
     <script>
         window.addEventListener('load', () => {
             const fadeEls = document.querySelectorAll('.fade-in');
@@ -228,5 +45,3 @@
             });
         });
     </script>
-</body>
-</html>
