@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Voitheia</title>
+    
+    <link rel="icon" type="image/webp" href="Voitheia-Photos/Voitheia_logo.webp"> 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="photos/Voitheia_logo.webp" alt="Voitheia Logo" class="logo">
+            </a>
+            <div class="nav-links">
+                <a href="crew.html">Crew</a>
+                <a href="projects.html">Projects</a>
+                <a href="accounts.html">Accounts</a>
+                <a href="apply.html" class="apply-btn">Apply</a>
+                <a href="donate.html" class="donate-btn">Donate</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="projects-section">
+    <h1 class="page-title fade-in"><u>Our Projects</u></h1>
+    <p class="page-subtitle fade-in">Every initiative reflects our commitment to impact and empathy.</p>
+    
+    <div class="search-container fade-in">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="project-search" placeholder="Search our initiatives...">
+    </div>
+
+    <div class="projects-grid">
+        
+        <div class="project-card fade-in" data-project-id="vcft2025">
+            <div class="project-card-inner">
+                <img src="Voitheia-Photos/project6.webp" class="project-card-image" alt="Voitheia Charity Football Tournament">
+                <div class="project-card-overlay">
+                    <h3>VCFT 2025</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> 41 Ribadu Rd, Ikoyi, Lagos 106104</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card fade-in" data-project-id="childrencentre">
+            <div class="project-card-inner">
+                <img src="Voitheia-Photos/project5.webp" class="project-card-image" alt="Children Centre">
+                <div class="project-card-overlay">
+                    <h3>Children Centre</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> 11 13 Ojerinde St, Mushin, Lagos 102215, Lagos, Nigeria</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card fade-in" data-project-id="ils">
+            <div class="project-card-inner">
+                <img src="Voitheia-Photos/project4.webp" class="project-card-image" alt="Indian Language School">
+                <div class="project-card-overlay">
+                    <h3>Indian Language School</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> 14/16 Obanle Aro Cres, Ilupeju, Lagos 100252, Lagos, Nigeria</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="project-card fade-in" data-project-id="babesalaam">
+            <div class="project-card-inner">
+                <img src="Voitheia-Photos/project3.webp" class="project-card-image" alt="Bab Es Salaam">
+                <div class="project-card-overlay">
+                    <h3>Bab Es Salaam Orphanage</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> 14 Joel Ogunnaike St, Ikeja GRA, Ikeja 101233, Lagos, Nigeria</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card fade-in" data-project-id="littlesaints">
+            <div class="project-card-inner">
+                <img src="Voitheia-Photos/project2.webp" class="project-card-image" alt="Little Saints">
+                <div class="project-card-overlay">
+                    <h3>Little Saint's Girls Orphanage</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Dorcas Osibona House, 15 Joe Ona Agbato Cl, Ogudu, Lagos 105102, Lagos, Nigeria</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card fade-in" data-project-id="heritage">
+            <div class="project-card-inner">
+                <img src="Voitheia-Photos/project1.webp" class="project-card-image" alt="Heritage Homes">
+                <div class="project-card-overlay">
+                    <h3>Heritage Homes</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> 45 Faramobi Ajike St, Anthony, Lagos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <h3 class="quick-links"><u>Quick Links</u></h3>
+                <a href="crew.html">Crew</a>
+                <a href="projects.html">Projects</a>
+                <a href="accounts.html">Accounts</a>
+                <a href="apply.html">Apply</a>
+                <a href="donate.html">Donate</a>
+            </div>
+            <div class="footer-links">
+                <h3 class="connectwus"><u>Connect With Us</u></h3>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/company/voitheia-org/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/voitheia.ng"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3 class="contact"><u>Contact</u></h3>
+            <button class="footer-copy-btn" onclick="copyToClipboard('voitheia.org@gmail.com', this)">
+                <i class="fas fa-envelope"></i> voitheia.org@gmail.com
+            </button>
+            <button class="footer-copy-btn" onclick="copyToClipboard('+2348055899033', this)">
+                <i class="fas fa-phone"></i> +234 706 140 1305
+            </button>
+            </div>
+        </div>
+    </footer>
+
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h2 id="modalTitle">Project Title</h2>
+                <div class="modal-location">
+                    <i class="fa-solid fa-location-dot" style="color:#FF6B6B"></i>
+                    <a href="#" id="modalAddress" target="_blank">Address Link</a>
+                </div>
+                <div class="gallery-container" id="modalGallery"></div>
+                <div class="modal-description" id="modalDesc"></div>
+                <div class="modal-footer-cta">
+                    <hr class="cta-divider">
+                    <p class="cta-heading">Support This Project & More</p>
+                    <div class="cta-contacts">
+                        <button class="cta-pill" onclick="copyToClipboard('voitheia.org@gmail.com', this)">
+                            <i class="fa-solid fa-envelope"></i>
+                            voitheia.org@gmail.com
+                        </button>
+                        <button class="cta-pill" onclick="copyToClipboard('+234XXXXXXXXXX', this)">
+                            <i class="fa-solid fa-phone"></i>
+                            +234 706 140 1305
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/cursor.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/footer_func.js"></script>
+</body>
+</html>
